@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SCS評価制度対応支援 | サプライチェーン強化に向けたセキュリティ対策評価制度</title>
+    <link rel="stylesheet" href="globals.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        /** @type {import('tailwindcss').Config} */
+        tailwind.config = {
+
+            theme: {
+                extend: {
+                },
+            },
+            plugins: [],
+        }
+    </script>
+</head>
+
+<body>
+    <div class="relative w-[1920px] h-[18814px] bg-white">
+        <section class="scs-story-cover-section top-[1896px] h-[900px] absolute w-full left-0 bg-[#173976]">
+            <div class="flex flex-col w-[1160px] h-full items-center justify-center gap-8 absolute top-0 left-[380px]">
+                <h2
+                    class="[font-family:'Noto_Sans_JP-Bold',Helvetica] font-bold text-white text-[48px] text-center tracking-[0] leading-[68px]">
+                    取引先から選ばれ続けるための<br />新しいセキュリティ基準</h2>
+                <p
+                    class="w-[820px] [font-family:'Noto_Sans_JP-Regular',Helvetica] font-normal text-[#dbe7ff] text-[18px] text-center leading-[34px]">
+                    サプライチェーン全体で求められる<br />SCS評価制度の背景と対応のポイント</p>
+                <div
+                    class="mt-8 [font-family:'Noto_Sans_JP-Bold',Helvetica] font-bold text-[#f3c65d] text-base text-center leading-[28.8px]">
+                    下へスクロールしてご覧ください</div>
+                <div class="text-white text-[34px] text-center leading-none">↓</div>
+            </div>
+        </section>
+        <section class="supply-chain-risk-section top-[2796px] h-[2550px] absolute w-full left-0 bg-[#173976]">
+            <div class="flex flex-col w-[1160px] items-center gap-8 absolute top-[105px] left-[380px]">
+                <h2
+                    class="[font-family:'Noto_Sans_JP-Bold',Helvetica] font-bold text-white text-[40px] text-center tracking-[0] leading-[54px]">
+                    なぜ今、取引先のセキュリティ対策が<br />重視されているのか</h2>
+                <div
+                    class="w-[960px] flex flex-col gap-6 [font-family:'Noto_Sans_JP-Regular',Helvetica] font-normal text-[#dbe7ff] text-[17px] text-center leading-[30.6px]">
+                    <p>近年、サイバー攻撃は大企業だけでなく、中小企業や委託先企業も標的になっています。</p>
+                    <p>特に増えているのが、セキュリティ対策が比較的弱い取引先や委託先を経由して、<br />本来狙われている企業へ侵入する「サプライチェーン攻撃」です。</p>
+                    <div class="p-6 bg-white/10 rounded-lg border border-[#5e79aa] text-left">
+                        <p class="mb-3 font-bold text-white">企業規模に関係なく、</p>
+                        <p>・不審メールの開封<br />・VPN機器の脆弱性<br />・パスワード管理の不備<br />などをきっかけに被害が発生しています。</p>
+                    </div>
+                </div>
+                <div
+                    class="w-[1000px] p-10 bg-white rounded-lg border border-[#d8e2f0] shadow-[0px_18px_48px_#0b1d3d80]">
+                    <img class="supply-chain-attack-image w-full max-w-[900px] h-auto mx-auto object-contain"
+                        src="img/threat-overview-img1.png" alt="サプライチェーン攻撃のイメージ図" />
+                </div>
+                <div class="w-full p-7 bg-white rounded-lg border border-[#d8e2f0] shadow-[0px_18px_48px_#0b1d3d80]">
+                    <div
+                        class="mb-5 [font-family:'Noto_Sans_JP-Bold',Helvetica] font-bold text-[#172033] text-[22px] text-center">
+                        ⚠その結果…こんな影響が発生</div>
+                    <div class="grid grid-cols-4 gap-4">
+                        <div class="py-5 bg-[#edf4ff] border-t-4 border-blue-600 text-[#172033] text-center font-bold">
+                            ・業務停止による納期遅延</div>
+                        <div class="py-5 bg-[#edf4ff] border-t-4 border-blue-600 text-[#172033] text-center font-bold">
+                            ・損害賠償・復旧コスト</div>
+                        <div class="py-5 bg-[#edf4ff] border-t-4 border-blue-600 text-[#172033] text-center font-bold">
+                            ・情報漏えいリスク</div>
+                        <div class="py-5 bg-[#edf4ff] border-t-4 border-blue-600 text-[#172033] text-center font-bold">
+                            ・取引先からの信用低下</div>
+                    </div>
+                </div>
+                <p
+                    class="[font-family:'Noto_Sans_JP-Bold',Helvetica] font-bold text-white text-[18px] text-center leading-[32.4px]">
+                    自社だけでなく、取引先にも影響が及ぶため、<br />サプライチェーン全体でのセキュリティ対策が重要視されています。</p>
+            </div>
+        </section>
+        <section class="scs-overview-section top-[5346px] h-[900px] absolute w-full left-0 bg-[#edf4ff]">
+            <div class="flex flex-col w-[1160px] items-center gap-7 absolute top-[105px] left-[380px]">
+                <h2
+                    class="[font-family:'Noto_Sans_JP-Bold',Helvetica] font-bold text-[#172033] text-[40px] text-center leading-[54px]">
+                    SCS評価制度とは？</h2>
+                <div
+                    class="w-[960px] p-10 bg-white rounded-lg border border-[#d8e2f0] shadow-[0px_18px_48px_#2241701a]">
+                    <div
+                        class="flex flex-col gap-5 [font-family:'Noto_Sans_JP-Regular',Helvetica] text-[#58657a] text-[17px] text-center leading-[30.6px]">
+                        <p>こうした背景を受けて、経済産業省は<br /><span
+                                class="font-bold text-[#173976]">「サプライチェーン強化に向けたセキュリティ対策評価制度（SCS評価制度）」</span><br />の創設を進めています。
+                        </p>
+                        <p>SCS評価制度は、企業のセキュリティ対策状況を共通の基準で評価し、<br />取引先が安心して取引できる環境づくりを目的とした制度です。</p>
+                    </div>
+                    <div class="mt-7 p-6 bg-[#f7faff] border-l-[6px] border-blue-600">
+                        <p class="mb-4 text-[#172033] text-center font-bold">
+                            自社だけではなく、以下を含めたサプライチェーン全体のセキュリティレベル向上を目指しています。</p>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div
+                                class="py-4 bg-white border border-[#d8e2f0] rounded text-[#173976] text-center font-bold">
+                                ・委託先</div>
+                            <div
+                                class="py-4 bg-white border border-[#d8e2f0] rounded text-[#173976] text-center font-bold">
+                                ・協力会社</div>
+                            <div
+                                class="py-4 bg-white border border-[#d8e2f0] rounded text-[#173976] text-center font-bold">
+                                ・取引先</div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="w-[900px] px-7 py-5 bg-[#fff7db] border-l-[6px] border-yellow-600 text-[#46556c] text-base text-center font-bold leading-[28.8px]">
+                    ※経済産業省主導で制度設計が進められており、2026年度末頃の開始が予定されています。</div>
+            </div>
+        </section>
+        <section class="security-action-relation-section top-[6246px] h-[1100px] absolute w-full left-0 bg-white">
+            <div class="flex flex-col w-[1160px] items-center gap-7 absolute top-[105px] left-[380px]">
+                <h2
+                    class="[font-family:'Noto_Sans_JP-Bold',Helvetica] font-bold text-[#172033] text-[40px] text-center leading-[54px]">
+                    SECURITY ACTIONとSCS評価制度の関係</h2>
+                <p
+                    class="w-[900px] [font-family:'Noto_Sans_JP-Regular',Helvetica] text-[#58657a] text-[17px] text-center leading-[30.6px]">
+                    企業のセキュリティ対策レベルは、★（星）で評価されます。<br />SCS評価制度は、SECURITY
+                    ACTION（★1・★2）に続く位置づけとして、<br />★3からスタートする制度となっています。</p>
+                <div
+                    class="w-[1100px] p-6 bg-white rounded-lg border border-[#d8e2f0] shadow-[0px_18px_48px_#2241701a]">
+                    <img class="security-action-relation-image w-full max-w-[1050px] h-auto mx-auto object-contain"
+                        src="img/threat-overview-img2.png" alt="SECURITY ACTIONとSCS評価制度の関係図" />
+                </div>
+            </div>
+        </section>
+        <section class="prepare-now-section top-[7346px] h-[1050px] absolute w-full left-0 bg-[#edf4ff]">
+            <div class="flex flex-col w-[1160px] items-center gap-7 absolute top-[105px] left-[380px]">
+                <h2
+                    class="[font-family:'Noto_Sans_JP-Bold',Helvetica] font-bold text-[#172033] text-[40px] text-center leading-[54px]">
+                    なぜ今から準備が必要なのか</h2>
+                <p
+                    class="[font-family:'Noto_Sans_JP-Regular',Helvetica] text-[#58657a] text-[17px] text-center leading-[30.6px]">
+                    制度開始後に想定されるケース</p>
+                <div class="grid grid-cols-2 gap-7 w-[1000px]">
+                    <div
+                        class="relative p-7 bg-white rounded-lg border border-[#d8e2f0] shadow-[0px_12px_34px_#22417014] text-[#173976] text-lg text-center font-bold">
+                        「御社のセキュリティ対策状況を<br />教えてください」
+                        <div
+                            class="absolute -bottom-4 left-[230px] w-8 h-8 bg-white rotate-45 border-r border-b border-[#d8e2f0]">
+                        </div>
+                    </div>
+                    <div
+                        class="relative p-7 bg-white rounded-lg border border-[#d8e2f0] shadow-[0px_12px_34px_#22417014] text-[#173976] text-lg text-center font-bold">
+                        「SCS評価制度への対応状況は<br />どうですか？」
+                        <div
+                            class="absolute -bottom-4 left-[230px] w-8 h-8 bg-white rotate-45 border-r border-b border-[#d8e2f0]">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-blue-600 text-[36px] leading-9">⇩</div>
+                <div
+                    class="w-[900px] p-8 bg-white rounded-lg border-t-[6px] border-yellow-600 shadow-[0px_18px_48px_#2241701a]">
+                    <div class="mb-5 text-[#172033] text-[22px] text-center font-bold">しかし実際には…</div>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="p-5 bg-[#f7faff] text-[#46556c] text-center font-bold leading-[28.8px]">
+                            ・現状の対策状況が<br />把握できていない</div>
+                        <div class="p-5 bg-[#f7faff] text-[#46556c] text-center font-bold leading-[28.8px]">
+                            ・必要なルールが<br />整備されていない</div>
+                        <div class="p-5 bg-[#f7faff] text-[#46556c] text-center font-bold leading-[28.8px]">
+                            ・社内教育が<br />実施できていない</div>
+                    </div>
+                    <p class="mt-5 text-[#58657a] text-center text-base">という企業も少なくありません。</p>
+                </div>
+                <div
+                    class="w-[960px] px-10 py-7 bg-[#173976] rounded-lg border-l-[8px] border-yellow-600 text-white text-[20px] text-center font-bold leading-[36px]">
+                    制度開始後に慌てないためにも、<br /><span class="text-[#f3c65d]">今のうちから現状を把握し、必要な対策を整理しておくことが重要です</span></div>
+            </div>
+        </section>
+        <section class="concerns-section top-[8396px] h-[1000px] absolute w-full left-0 bg-white">
+            <div class="flex flex-col w-[1160px] items-center gap-8 absolute top-[105px] left-[380px]">
+                <h2
+                    class="[font-family:'Noto_Sans_JP-Bold',Helvetica] font-bold text-[#172033] text-[40px] text-center leading-[54px]">
+                    こんなお悩みはありませんか？</h2>
+                <div class="grid grid-cols-3 gap-6 w-full">
+                    <article
+                        class="min-h-[390px] p-8 bg-white rounded-lg border border-[#d8e2f0] border-t-[6px] border-t-blue-600 shadow-[0px_12px_34px_#22417014]">
+                        <div class="mb-4 text-yellow-600 text-[26px] text-center font-bold">01</div>
+                        <h3 class="mb-5 text-[#172033] text-[19px] text-center font-bold leading-[32px]">
+                            ・取引先から急に対応を求められたら不安</h3>
+                        <p class="text-[#58657a] text-base leading-[30px]">制度開始に伴い、取引先から「★3・★4取得」を求められる可能性がある</p>
+                    </article>
+                    <article
+                        class="min-h-[390px] p-8 bg-white rounded-lg border border-[#d8e2f0] border-t-[6px] border-t-blue-600 shadow-[0px_12px_34px_#22417014]">
+                        <div class="mb-4 text-yellow-600 text-[26px] text-center font-bold">02</div>
+                        <h3 class="mb-5 text-[#172033] text-[19px] text-center font-bold leading-[32px]">
+                            ・何から準備すればいいのかわからない</h3>
+                        <p class="text-[#58657a] text-base leading-[30px]">
+                            新しい制度のため情報も少なく、「まず何をすべきか」「どこまで対応すればよいか」が分かりづらい</p>
+                    </article>
+                    <article
+                        class="min-h-[390px] p-8 bg-white rounded-lg border border-[#d8e2f0] border-t-[6px] border-t-blue-600 shadow-[0px_12px_34px_#22417014]">
+                        <div class="mb-4 text-yellow-600 text-[26px] text-center font-bold">03</div>
+                        <h3 class="mb-5 text-[#172033] text-[19px] text-center font-bold leading-[32px]">
+                            ・既存のセキュリティ対策と重複しないか不安</h3>
+                        <p class="text-[#58657a] text-base leading-[30px]">
+                            ISMS・Pマークなど、既存の認証・取り組みと何が違うのか分からない。<br /><br />「また一から対応が必要？」「今の運用は活かせないの？」と不安を感じている。</p>
+                    </article>
+                </div>
+                <div
+                    class="w-[1000px] px-10 py-7 bg-[#173976] rounded-lg border-l-[8px] border-yellow-600 text-white text-[20px] text-center font-bold leading-[36px]">
+                    早めに制度対応を進めることで、取引先への信頼性向上や競合他社との差別化につながります</div>
+            </div>
+        </section>
+
+        <section class="support-section top-[9396px] h-[2650px] absolute w-full left-0 bg-[#f7faff]">
+            <div class="flex flex-col w-[1160px] items-center gap-7 absolute top-[105px] left-[380px]">
+                <h2
+                    class="[font-family:'Noto_Sans_JP-Bold',Helvetica] font-bold text-[#172033] text-[40px] text-center leading-[54px]">
+                    不安のない計画的なSCS評価制度対応をサポートします</h2>
+                <div class="w-[960px] text-[#58657a] text-[17px] text-center leading-[32px]">
+                    <p>制度対応では、「何を整備するべきか」「どこまで対応すればよいか」を判断することが重要です。</p>
+                    <p class="mt-4">あわいコンサルティングでは、無理なく取り組める現実的なセキュリティ対策をご提案し、制度対応をサポートします。</p>
+                </div>
+                <h3 class="mt-6 text-[#173976] text-[30px] font-bold">支援内容</h3>
+                <div class="scs-support-flow flex flex-col items-center gap-5 w-[1060px]">
+                    <article
+                        class="support-step-card grid grid-cols-[320px_1fr] gap-10 w-full p-9 bg-white rounded-lg border border-[#d8e2f0] shadow-[0px_12px_34px_#22417014]">
+                        <div
+                            class="support-step-visual flex flex-col items-center justify-center min-h-[300px] bg-[#edf4ff] rounded-lg border border-[#d8e2f0]">
+                            <span class="text-blue-600 text-[82px] font-bold">01</span><span
+                                class="text-[#173976] font-bold">STEP１</span></div>
+                        <div class="flex flex-col justify-center">
+                            <h4 class="mb-5 text-[#173976] text-[25px] font-bold">現状整理・ギャップ分析の実施</h4>
+                            <p class="text-[#58657a] text-base leading-[30px]">
+                                現在のセキュリティ対策状況をもとに、SCS評価制度「★3・★4の要求事項・評価基準」とのギャップを可視化します。<br /><br />「何ができていて、何が不足しているのか」を整理することで、現状を把握していきます。
+                            </p>
+                        </div>
+                    </article>
+                    <div class="text-blue-600 text-[34px]">↓</div>
+                    <article
+                        class="support-step-card grid grid-cols-[1fr_320px] gap-10 w-full p-9 bg-white rounded-lg border border-[#d8e2f0] shadow-[0px_12px_34px_#22417014]">
+                        <div class="flex flex-col justify-center">
+                            <h4 class="mb-5 text-[#173976] text-[25px] font-bold">対策案の提示・検討の実施</h4>
+                            <p class="text-[#58657a] text-base leading-[30px]">
+                                分析の結果をもとに、★3・★4対応に向けた必要な対策を整理します。<br /><br />企業ごとの環境や既存の取り組みを踏まえながら、不足している項目・優先順位を明確化し、<br /><br />「何を、どこから、どう始めるべきか」が分かる現実的な対応策をご提案します。
+                            </p>
+                        </div>
+                        <div
+                            class="support-step-visual flex flex-col items-center justify-center min-h-[330px] bg-[#edf4ff] rounded-lg border border-[#d8e2f0]">
+                            <span class="text-blue-600 text-[82px] font-bold">02</span><span
+                                class="text-[#173976] font-bold">STEP２</span></div>
+                    </article>
+                    <div class="text-blue-600 text-[34px]">↓</div>
+                    <article
+                        class="support-step-card grid grid-cols-[320px_1fr] gap-10 w-full p-9 bg-white rounded-lg border border-[#d8e2f0] shadow-[0px_12px_34px_#22417014]">
+                        <div
+                            class="support-step-visual flex flex-col items-center justify-center min-h-[300px] bg-[#edf4ff] rounded-lg border border-[#d8e2f0]">
+                            <span class="text-blue-600 text-[82px] font-bold">03</span><span
+                                class="text-[#173976] font-bold">STEP３</span></div>
+                        <div class="flex flex-col justify-center">
+                            <h4 class="mb-5 text-[#173976] text-[25px] font-bold">対策案の実施・運用</h4>
+                            <p class="text-[#58657a] text-base leading-[30px]">
+                                必要に応じて規程・手順書の作成・記録類の整備を支援します。<br /><br />運用しやすさを重視し、「作って終わり」ではなく、実際に使える仕組みづくりを行います。<br /><br />お客様には定めたルールの運用をお願いいたしします。
+                            </p>
+                        </div>
+                    </article>
+                    <div class="text-blue-600 text-[34px]">↓</div>
+                    <article
+                        class="support-step-card grid grid-cols-[1fr_320px] gap-10 w-full p-9 bg-white rounded-lg border border-[#d8e2f0] shadow-[0px_12px_34px_#22417014]">
+                        <div class="flex flex-col justify-center">
+                            <h4 class="mb-5 text-[#173976] text-[25px] font-bold">★3・★4の登録</h4>
+                            <p class="text-[#58657a] text-base leading-[30px]">
+                                定めたルールにおける運用結果を自己評価に落とし込みます。<br /><br />★3の場合は、制度側が指定したセキュリティ専門家へのレビュー依頼が必要です。<br /><br />★4の場合は、制度側が指定した第三者評価機関による現地審査が行われます。<br /><br />★3・★4ともに、全ての評価基準への適合が求められるため、評価結果が不適合だった場合、是正案の提示・報告書の整備を行います。
+                            </p>
+                        </div>
+                        <div
+                            class="support-step-visual flex flex-col items-center justify-center min-h-[430px] bg-[#edf4ff] rounded-lg border border-[#d8e2f0]">
+                            <span class="text-blue-600 text-[82px] font-bold">04</span><span
+                                class="text-[#173976] font-bold">STEP４</span></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="support-plans-section top-[12046px] h-[1050px] absolute w-full left-0 bg-white">
+            <div class="flex flex-col w-[1160px] items-center gap-8 absolute top-[105px] left-[380px]">
+                <h2
+                    class="[font-family:'Noto_Sans_JP-Bold',Helvetica] font-bold text-[#172033] text-[40px] text-center leading-[54px]">
+                    支援プラン</h2>
+                <div class="grid grid-cols-4 gap-5 w-full">
+                    <article
+                        class="min-h-[620px] p-7 bg-white rounded-lg border border-[#d8e2f0] border-t-[6px] border-t-blue-600 shadow-[0px_12px_34px_#22417014]">
+                        <div class="mb-5 text-blue-600 text-[24px] font-bold">①</div>
+                        <h3 class="min-h-[65px] text-[#172033] text-[19px] font-bold">ギャップ分析表の販売</h3>
+                        <div class="my-6 p-5 bg-[#edf4ff] rounded text-[#173976] text-[20px] font-bold leading-[38px]">
+                            ★3：49,800円<br />★4：79,800円</div>
+                        <p class="text-[#58657a] text-base leading-[30px]">ギャップ分析表を購入いただきステップ１の作業を自社で行う場合を想定しております</p>
+                    </article>
+                    <article
+                        class="min-h-[620px] p-7 bg-white rounded-lg border border-[#d8e2f0] border-t-[6px] border-t-blue-600 shadow-[0px_12px_34px_#22417014]">
+                        <div class="mb-5 text-blue-600 text-[24px] font-bold">②</div>
+                        <h3 class="min-h-[65px] text-[#172033] text-[19px] font-bold">ギャップ分析の実施</h3>
+                        <div class="my-6 p-5 bg-[#edf4ff] rounded text-[#173976] text-[20px] font-bold leading-[38px]">
+                            ★3：125,000円<br />★4：198,000円</div>
+                        <p class="text-[#58657a] text-base leading-[30px]">ステップ１のギャップ分析対応を行います</p>
+                    </article>
+                    <article
+                        class="min-h-[620px] p-7 bg-white rounded-lg border border-[#d8e2f0] border-t-[6px] border-t-blue-600 shadow-[0px_12px_34px_#22417014]">
+                        <div class="mb-5 text-blue-600 text-[24px] font-bold">③</div>
+                        <h3 class="min-h-[65px] text-[#172033] text-[19px] font-bold">ギャップ分析の実施＋改善案付き</h3>
+                        <div class="my-6 p-5 bg-[#edf4ff] rounded text-[#173976] text-[20px] font-bold leading-[38px]">
+                            ★3：162,500円<br />★4：257,400円</div>
+                        <p class="text-[#58657a] text-base leading-[30px]">ステップ１、２の対応を行います</p>
+                    </article>
+                    <article
+                        class="relative min-h-[620px] p-7 bg-[#173976] rounded-lg border-[3px] border-yellow-600 shadow-[0px_18px_48px_#22417040]">
+                        <div
+                            class="absolute -top-5 left-[45px] w-[180px] py-2 bg-yellow-600 rounded-full text-white text-center font-bold">
+                            おすすめプラン</div>
+                        <div class="mb-5 mt-4 text-[#f3c65d] text-[24px] font-bold">④</div>
+                        <h3 class="min-h-[65px] text-white text-[19px] font-bold">コンサルサービス</h3>
+                        <div class="my-6 p-5 bg-white rounded text-[#173976] text-[20px] font-bold leading-[38px]">
+                            ★3：562,500円<br />★4：891,000円</div>
+                        <p class="text-[#dbe7ff] text-base leading-[30px]">ステップ１～４までの対応を行います</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="proposal-section top-[13096px] h-[750px] absolute w-full left-0 bg-[#173976]">
+            <div class="flex flex-col w-[1160px] items-center gap-7 absolute top-[100px] left-[380px]">
+                <h2 class="font-bold text-white text-[40px] text-center leading-[58px]">
+                    「対策していると良い」から、<br />「対策していなければならない」時代へ</h2>
+                <div class="w-[960px] text-[#dbe7ff] text-[17px] text-center leading-[32px]">
+                    <p>近年は、取引継続や新規取引においても、一定水準のセキュリティ対策を求める動きが広がっています。</p>
+                    <p class="mt-4">制度開始後に慌てて対応するのではなく、“求められる前に備える”ことが、今後の信頼性向上やビジネス機会につながります。</p>
+                </div>
+                <p class="text-white text-[18px] text-center font-bold leading-[34px]">
+                    「何から始めればいいかわからない」という段階からでも大丈夫。<br />まずは現状整理から、一緒に進めていきます</p>
+                <button
+                    class="px-9 py-5 bg-yellow-600 rounded-md shadow-[0px_8px_0px_#956500] text-white text-lg font-bold">➤【まずは無料相談する】</button>
+            </div>
+        </section>
+
+        <section class="benefits-section top-[13846px] h-[1150px] absolute w-full left-0 bg-white">
+            <div class="flex flex-col w-[1160px] items-center gap-8 absolute top-[105px] left-[380px]">
+                <h2 class="font-bold text-[#172033] text-[40px] text-center leading-[54px]">あわいコンサルティングが選ばれる４つの理由</h2>
+                <div class="grid grid-cols-2 gap-6 w-[1050px]">
+                    <article
+                        class="min-h-[320px] p-8 bg-white rounded-lg border border-[#d8e2f0] border-t-[6px] border-t-yellow-600 shadow-[0px_12px_34px_#22417014]">
+                        <div class="mb-4 text-blue-600 text-[25px] font-bold">01｜幅広い実績と専門性</div>
+                        <p class="text-[#58657a] text-base leading-[30px]">
+                            3000社以上の支援実績から培ったノウハウをもとに、業種・規模に応じた最適な制度対応をご提案します。</p>
+                    </article>
+                    <article
+                        class="min-h-[320px] p-8 bg-white rounded-lg border border-[#d8e2f0] border-t-[6px] border-t-yellow-600 shadow-[0px_12px_34px_#22417014]">
+                        <div class="mb-4 text-blue-600 text-[25px] font-bold">02｜取得・更新率100%・返金保証</div>
+                        <p class="text-[#58657a] text-base leading-[30px]">
+                            Pマーク・ISMSなど、情報セキュリティ認証支援において取得・更新率100%を継続。<br /><br />万一、弊社起因で認証取得に至らなかった場合は、全額返金いたします。</p>
+                    </article>
+                    <article
+                        class="min-h-[320px] p-8 bg-white rounded-lg border border-[#d8e2f0] border-t-[6px] border-t-yellow-600 shadow-[0px_12px_34px_#22417014]">
+                        <div class="mb-4 text-blue-600 text-[25px] font-bold">03｜既存のセキュリティ運用を活かした制度対応</div>
+                        <p class="text-[#58657a] text-base leading-[30px]">既存のセキュリティ運用を活かしながら、無駄や重複のない制度対応を支援します。</p>
+                    </article>
+                    <article
+                        class="min-h-[320px] p-8 bg-white rounded-lg border border-[#d8e2f0] border-t-[6px] border-t-yellow-600 shadow-[0px_12px_34px_#22417014]">
+                        <div class="mb-4 text-blue-600 text-[25px] font-bold">04｜ニーズに応じた柔軟な支援体制</div>
+                        <p class="text-[#58657a] text-base leading-[30px]">
+                            代行から伴走まで、専任担当を中心とした複数名体制で、<br /><br />企業ごとの状況に応じた最適な進め方をご提案します。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="recommended-section top-[14996px] h-[850px] absolute w-full left-0 bg-[#fff7db]">
+            <div class="flex flex-col w-[1160px] items-center gap-8 absolute top-[105px] left-[380px]">
+                <h2 class="font-bold text-[#172033] text-[40px] text-center leading-[54px]">こんな企業様におすすめです</h2>
+                <div class="flex flex-col gap-3 w-[800px]">
+                    <div
+                        class="px-7 py-5 bg-white border-l-[7px] border-yellow-600 text-[#172033] text-center font-bold">
+                        ・将来的な取引先要求に備えたい</div>
+                    <div
+                        class="px-7 py-5 bg-white border-l-[7px] border-yellow-600 text-[#172033] text-center font-bold">
+                        ・★3・★4取得を目指したい</div>
+                    <div
+                        class="px-7 py-5 bg-white border-l-[7px] border-yellow-600 text-[#172033] text-center font-bold">
+                        ・セキュリティ対策を見直したい</div>
+                    <div
+                        class="px-7 py-5 bg-white border-l-[7px] border-yellow-600 text-[#172033] text-center font-bold">
+                        ・制度開始後に慌てたくない</div>
+                    <div
+                        class="px-7 py-5 bg-white border-l-[7px] border-yellow-600 text-[#172033] text-center font-bold">
+                        ・まずは現状を整理したい</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="consultation-cta-section top-[15846px] h-[750px] absolute w-full left-0 bg-blue-600">
+            <div class="flex flex-col w-[1160px] items-center gap-8 absolute top-[105px] left-[380px]">
+                <h2 class="font-bold text-white text-[40px] text-center leading-[54px]">無料相談でここまで分かります</h2>
+                <div class="grid grid-cols-4 gap-5 w-full">
+                    <div
+                        class="min-h-[160px] flex items-center justify-center p-6 bg-white rounded-lg text-[#173976] text-lg text-center font-bold">
+                        貴社に必要な対応レベル</div>
+                    <div
+                        class="min-h-[160px] flex items-center justify-center p-6 bg-white rounded-lg text-[#173976] text-lg text-center font-bold">
+                        ★3・★4取得までの流れ</div>
+                    <div
+                        class="min-h-[160px] flex items-center justify-center p-6 bg-white rounded-lg text-[#173976] text-lg text-center font-bold">
+                        必要な作業・準備内容</div>
+                    <div
+                        class="min-h-[160px] flex items-center justify-center p-6 bg-white rounded-lg text-[#173976] text-lg text-center font-bold">
+                        現状の課題整理</div>
+                </div>
+                <button
+                    class="px-9 py-5 bg-yellow-600 rounded-md shadow-[0px_8px_0px_#956500] text-white text-lg font-bold">無料相談する</button>
+            </div>
+        </section>
+
+        <section class="footer-cta-section top-[16596px] h-[600px] absolute w-full left-0 bg-[#173976]">
+            <div class="flex flex-col w-[1160px] items-center gap-8 absolute top-[110px] left-[380px]">
+                <h2 class="font-bold text-white text-[40px] text-center leading-[54px]">制度開始前だからこそ、早めの準備が重要です。</h2>
+                <p class="text-[#dbe7ff] text-[18px] text-center leading-[34px]">
+                    サプライチェーン強化に向けたセキュリティ対策評価制度（SCS評価制度）のご相談はお気軽に</p>
+                <button
+                    class="px-10 py-5 bg-yellow-600 rounded-md shadow-[0px_8px_0px_#956500] text-white text-lg font-bold">無料相談する</button>
+            </div>
+        </section>
+
+        <div
+            class="top-[17196px] h-[1298px] flex bg-[url(legacy:image:md5:51:340)] bg-[100%_100%] absolute w-full left-0">
+            <div class="flex mt-[131px] w-[1160px] h-[1034.57px] ml-[380px] relative flex-col items-center gap-3">
+                <div class="flex relative self-stretch w-full flex-[0_0_auto] flex-col items-center">
+                    <div
+                        class="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'Noto_Sans_JP-Bold',Helvetica] font-bold text-white text-[40px] text-center tracking-[0] leading-[54px] whitespace-nowrap">
+                        お問い合わせフォーム</div>
+                </div>
+                <div
+                    class="flex flex-col max-w-[760px] w-[760px] items-center pt-[11px] pb-[0.59px] px-0 relative flex-[0_0_auto]">
+                    <div
+                        class="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'Noto_Sans_JP-Regular',Helvetica] font-normal text-white text-[17px] text-center tracking-[0] leading-[30.6px] whitespace-nowrap">
+                        制度対応についての疑問や不安を、お気軽にお聞かせください。</div>
+                </div>
+                <div
+                    class="flex flex-col max-w-[900px] w-[900px] items-start gap-[21px] pt-[93.01px] pb-[54px] px-[54px] relative flex-[0_0_auto] shadow-[0px_18px_50px_#2241701a] bg-white rounded-lg border border-solid border-[#d8e2f0]">
+                    <div class="flex flex-col items-start gap-[7px] relative self-stretch w-full flex-[0_0_auto]">
+                        <div
+                            class="flex flex-col items-start pt-0 pb-[0.8px] px-0 relative self-stretch w-full flex-[0_0_auto]">
+                            <div
+                                class="self-stretch mt-[-1.00px] text-base leading-[28.8px] relative flex items-center [font-family:'Noto_Sans_JP-Black',Helvetica] font-black text-[#172033] tracking-[0]">
+                                会社名</div>
+                        </div>
+                        <div
+                            class="relative self-stretch w-full h-[54px] bg-[#fbfdff] rounded border border-solid border-[#b8c7dd]">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-start gap-[6.99px] relative self-stretch w-full flex-[0_0_auto]">
+                        <div
+                            class="flex flex-col items-start pt-0 pb-[0.8px] px-0 relative self-stretch w-full flex-[0_0_auto]">
+                            <div
+                                class="self-stretch mt-[-1.00px] text-base leading-[28.8px] relative flex items-center [font-family:'Noto_Sans_JP-Black',Helvetica] font-black text-[#172033] tracking-[0]">
+                                お名前</div>
+                        </div>
+                        <div
+                            class="relative self-stretch w-full h-[54px] bg-[#fbfdff] rounded border border-solid border-[#b8c7dd]">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-start gap-[7px] relative self-stretch w-full flex-[0_0_auto]">
+                        <div
+                            class="flex flex-col items-start pt-0 pb-[0.8px] px-0 relative self-stretch w-full flex-[0_0_auto]">
+                            <div
+                                class="self-stretch mt-[-1.00px] text-base leading-[28.8px] relative flex items-center [font-family:'Noto_Sans_JP-Black',Helvetica] font-black text-[#172033] tracking-[0]">
+                                メールアドレス</div>
+                        </div>
+                        <div
+                            class="relative self-stretch w-full h-[54px] bg-[#fbfdff] rounded border border-solid border-[#b8c7dd]">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-start gap-[7px] relative self-stretch w-full flex-[0_0_auto]">
+                        <div
+                            class="flex flex-col items-start pt-0 pb-[0.8px] px-0 relative self-stretch w-full flex-[0_0_auto]">
+                            <div
+                                class="self-stretch mt-[-1.00px] text-base leading-[28.8px] relative flex items-center [font-family:'Noto_Sans_JP-Black',Helvetica] font-black text-[#172033] tracking-[0]">
+                                電話番号</div>
+                        </div>
+                        <div
+                            class="relative self-stretch w-full h-[54px] bg-[#fbfdff] rounded border border-solid border-[#b8c7dd]">
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col items-start gap-[6.99px] pt-0 pb-[10.99px] px-0 relative self-stretch w-full flex-[0_0_auto]">
+                        <div
+                            class="flex flex-col items-start pt-0 pb-[0.8px] px-0 relative self-stretch w-full flex-[0_0_auto]">
+                            <div
+                                class="self-stretch mt-[-1.00px] text-base leading-[28.8px] relative flex items-center [font-family:'Noto_Sans_JP-Black',Helvetica] font-black text-[#172033] tracking-[0]">
+                                ご相談内容</div>
+                        </div>
+                        <div
+                            class="w-full h-40 bg-[#fbfdff] rounded border-[#b8c7dd] relative self-stretch border border-solid">
+                        </div>
+                    </div>
+                    <button
+                        class="all-[unset] box-border flex items-center justify-center pt-[17px] pb-[18px] px-7 relative self-stretch w-full flex-[0_0_auto] bg-blue-600 rounded-md shadow-[0px_8px_0px_#1646b8]">
+                        <div
+                            class="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'Inter-ExtraBold',Helvetica] font-extrabold text-white text-[13.3px] text-center tracking-[0] leading-[normal]">
+                            送信する</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <footer
+            class="flex flex-col w-full items-center justify-center pt-[65px] pb-[38px] px-0 absolute top-[18493px] left-0 bg-[#112b59]">
+            <div class="flex flex-col w-[1160px] items-start gap-[45px] relative flex-[0_0_auto]">
+                <div
+                    class="grid grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)] grid-rows-[124.97px] h-[124.97px] gap-9">
+                    <div
+                        class="relative row-[1_/_2] col-[1_/_2] w-[338.66px] h-fit flex flex-col items-start gap-[13.8px] pt-0 pb-[59.78px] px-0">
+                        <div
+                            class="mt-[-1.00px] [font-family:'Noto_Sans_JP-Bold',Helvetica] font-bold text-white text-base leading-[28.8px] relative flex items-center w-fit tracking-[0] whitespace-nowrap">
+                            あわいコンサルティング株式会社</div>
+                        <div class="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
+                            <div
+                                class="relative flex items-center self-stretch mt-[-1.00px] [font-family:'Noto_Sans_JP-Regular',Helvetica] font-normal text-[#b9c9e4] text-[13px] tracking-[0] leading-[23.4px]">
+                                制度開始前だからこそ、早めの準備が重要です。</div>
+                        </div>
+                    </div>
+                    <div
+                        class="relative row-[1_/_2] col-[2_/_3] w-[169.33px] h-fit flex flex-col items-start gap-[13.19px] pt-0 pb-[13px] px-0">
+                        <div
+                            class="mt-[-1.00px] [font-family:'Noto_Sans_JP-Bold',Helvetica] font-bold text-white text-base leading-[28.8px] relative flex items-center w-fit tracking-[0] whitespace-nowrap">
+                            サービス</div>
+                        <div class="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
+                            <div
+                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans_JP-Regular',Helvetica] font-normal text-[#b9c9e4] text-[13px] leading-[23.4px] relative tracking-[0]">
+                                SCS評価制度対応支援<br />現状診断<br />運用支援</div>
+                        </div>
+                    </div>
+                    <div
+                        class="relative row-[1_/_2] col-[3_/_4] w-[169.34px] h-fit flex flex-col items-start gap-[13.19px] pt-0 pb-[13px] px-0">
+                        <div
+                            class="mt-[-1.00px] [font-family:'Noto_Sans_JP-Bold',Helvetica] font-bold text-white text-base leading-[28.8px] relative flex items-center w-fit tracking-[0] whitespace-nowrap">
+                            制度概要</div>
+                        <div class="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
+                            <div
+                                class="self-stretch mt-[-1.00px] [font-family:'Noto_Sans_JP-Regular',Helvetica] font-normal text-[#b9c9e4] text-[13px] leading-[23.4px] relative tracking-[0]">
+                                SCS評価制度とは<br />★3・★4の違い<br />よくあるご質問</div>
+                        </div>
+                    </div>
+                    <div
+                        class="relative row-[1_/_2] col-[4_/_5] w-[169.33px] h-fit flex flex-col items-start gap-[13.19px] pt-0 pb-[13px] px-0">
+                        <div
+                            class="mt-[-1.00px] [font-family:'Noto_Sans_JP-Bold',Helvetica] font-bold text-white text-base leading-[28.8px] relative flex items-center w-fit tracking-[0] whitespace-nowrap">
+                            会社情報</div>
+                        <div class="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
+                            <div
+                                class="relative self-stretch mt-[-1.00px] [font-family:'Noto_Sans_JP-Regular',Helvetica] font-normal text-[#b9c9e4] text-[13px] tracking-[0] leading-[23.4px]">
+                                会社概要<br />代表メッセージ<br />アクセス</div>
+                        </div>
+                    </div>
+                    <div
+                        class="relative row-[1_/_2] col-[5_/_6] w-[169.33px] h-fit flex flex-col items-start gap-[13.19px] pt-0 pb-[13px] px-0">
+                        <div
+                            class="mt-[-1.00px] [font-family:'Noto_Sans_JP-Bold',Helvetica] font-bold text-white text-base leading-[28.8px] relative flex items-center w-fit tracking-[0] whitespace-nowrap">
+                            その他</div>
+                        <div class="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
+                            <div
+                                class="relative self-stretch mt-[-1.00px] [font-family:'Noto_Sans_JP-Regular',Helvetica] font-normal text-[#b9c9e4] text-[13px] tracking-[0] leading-[23.4px]">
+                                ブログ<br />お知らせ<br />お問い合わせ</div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col items-center pt-6 pb-0 px-0 relative self-stretch w-full flex-[0_0_auto] border-t [border-top-style:solid] border-[#38517d]">
+                    <p
+                        class="relative flex items-center justify-center w-fit [font-family:'Noto_Sans_JP-Regular',Helvetica] font-normal text-[#dbe7ff] text-xs text-center tracking-[0] leading-[21.6px] whitespace-nowrap">
+                        © Awai Consulting Co., Ltd. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <div class="top-[78px] h-[1818px] bg-[#edf4ff] absolute w-full left-0"><img
+                class="absolute top-0 left-0 w-[1920px] h-[1818px]" src="./img/hero-bg.png" />
+            <div
+                class="absolute top-[1415px] left-[380px] w-[671px] h-[178px] rounded-[335.5px/89px] [background:radial-gradient(50%_50%_at_50%_50%,rgba(37,43,78,0.47)_0%,rgba(37,43,78,0.23)_80%,rgba(86,99,180,0)_100%)]">
+            </div>
+            <div
+                class="absolute top-[1130px] left-[648px] w-[547px] h-[145px] rounded-[273.5px/72.5px] [background:radial-gradient(50%_50%_at_50%_50%,rgba(37,43,78,0.47)_0%,rgba(37,43,78,0.23)_80%,rgba(86,99,180,0)_100%)]">
+            </div>
+            <div
+                class="absolute top-[889px] left-[777px] w-[547px] h-[145px] rounded-[273.5px/72.5px] [background:radial-gradient(50%_50%_at_50%_50%,rgba(37,43,78,0.47)_0%,rgba(37,43,78,0.23)_80%,rgba(86,99,180,0)_100%)]">
+            </div>
+            <div
+                class="absolute top-[655px] left-[960px] w-[547px] h-[145px] rounded-[273.5px/72.5px] [background:radial-gradient(50%_50%_at_50%_50%,rgba(37,43,78,0.47)_0%,rgba(37,43,78,0.23)_80%,rgba(86,99,180,0)_100%)]">
+            </div>
+            <div
+                class="absolute top-[363px] left-[1058px] w-[547px] h-[145px] rounded-[273.5px/72.5px] [background:radial-gradient(50%_50%_at_50%_50%,rgba(37,43,78,0.47)_0%,rgba(37,43,78,0.23)_80%,rgba(86,99,180,0)_100%)]">
+            </div>
+            <img class="absolute top-0 left-[408px] w-[1200px] h-[1677px] aspect-[0.72]" src="./img/hero.png" />
+            <div class="flex flex-col w-[682px] items-start gap-[12.9px] absolute top-[119px] left-[380px]">
+                <div class="flex items-start self-stretch w-full flex-col relative flex-[0_0_auto]">
+                    <div
+                        class="relative self-stretch h-[242px] mt-[-1.00px] [font-family:'Zen_Kaku_Gothic_New-Bold',Helvetica] font-bold text-[#122454] text-[62px] tracking-[0] leading-[80.6px]">
+                        取引先から<br />「セキュリティ対策」を<br />求められる前に。</div>
+                </div>
+                <div
+                    class="flex flex-col items-start pt-[14.19px] pb-[0.69px] px-0 relative self-stretch w-full flex-[0_0_auto]">
+                    <div
+                        class="relative flex items-center self-stretch h-[92px] mt-[-1.00px] [font-family:'Noto_Sans_JP-Regular',Helvetica] font-normal text-[#42526a] text-[17px] tracking-[0] leading-[30.6px]">
+                        サプライチェーン強化に向けたセキュリティ対策評価制度（SCS評価制度）への対応に向けて、現状分析から社内ルール整備まで、専門家がサポートします。</div>
+                </div>
+                <div
+                    class="flex flex-wrap items-start gap-[0px_10px] pt-[15.1px] pb-[19.1px] px-0 relative self-stretch w-full flex-[0_0_auto]">
+                    <div
+                        class="inline-flex flex-col items-start px-3.5 py-2 flex-[0_0_auto] bg-white rounded-[5px] border-[#bfd2f5] relative self-stretch border border-solid">
+                        <p
+                            class="[font-family:'Noto_Sans_JP-Black',Helvetica] font-black text-transparent text-[13px] leading-[23.4px] relative flex items-center w-fit tracking-[0] whitespace-nowrap">
+                            <span class="text-yellow-600">★3・★4 </span>
+                            <span class="text-[#244b8f]">取得をサポート</span>
+                        </p>
+                    </div>
+                    <div
+                        class="inline-flex flex-col items-start px-3.5 py-2 flex-[0_0_auto] bg-white rounded-[5px] border-[#bfd2f5] relative self-stretch border border-solid">
+                        <div
+                            class="text-[#244b8f] text-[13px] leading-[23.4px] relative flex items-center w-fit [font-family:'Noto_Sans_JP-Black',Helvetica] font-black tracking-[0] whitespace-nowrap">
+                            セキュリティ対策の現状診断</div>
+                    </div>
+                    <div
+                        class="inline-flex flex-col items-start px-3.5 py-2 flex-[0_0_auto] bg-white rounded-[5px] border-[#bfd2f5] relative self-stretch border border-solid">
+                        <div
+                            class="text-[#244b8f] text-[13px] leading-[23.4px] relative flex items-center w-fit [font-family:'Noto_Sans_JP-Black',Helvetica] font-black tracking-[0] whitespace-nowrap">
+                            制度開始後も慌てない体制づくり</div>
+                    </div>
+                </div>
+                <div
+                    class="inline-flex px-7 py-4 flex-[0_0_auto] bg-yellow-600 shadow-[0px_8px_0px_#956500] items-center justify-center relative rounded-md">
+                    <div
+                        class="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'Noto_Sans_JP-Black',Helvetica] font-black text-white text-base text-center tracking-[0] leading-[28.8px] whitespace-nowrap">
+                        まずは無料相談する</div>
+                </div>
+            </div>
+        </div>
+        <header
+            class="flex w-full h-[78px] items-center justify-center absolute top-0 left-0 bg-white [border-top-style:none] [border-right-style:none] border-b [border-bottom-style:solid] [border-left-style:none] border-[#d8e2f0]">
+            <div class="flex w-[1240px] items-center justify-between relative">
+                <div class="inline-flex flex-col items-start relative flex-[0_0_auto]">
+                    <div
+                        class="relative flex items-center w-fit mt-[-1.00px] [font-family:'Noto_Sans_JP-Black',Helvetica] font-black text-[#1646b8] text-xl tracking-[0] leading-9 whitespace-nowrap">
+                        あわいコンサルティング</div>
+                </div>
+                <div class="inline-flex items-center gap-8 relative flex-[0_0_auto]">
+                    <div
+                        class="flex w-[236px] pt-2.5 pb-[11.19px] px-5 bg-blue-600 items-center justify-center relative rounded-md">
+                        <div
+                            class="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'Noto_Sans_JP-Black',Helvetica] font-black text-white text-sm text-center tracking-[0] leading-[25.2px] whitespace-nowrap">
+                            無料相談</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+</body>
+
+</html>

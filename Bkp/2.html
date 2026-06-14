@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCS評価制度対応支援 | あわいコンサルティング</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        corporate: {
+                            navy: '#1e3a8a',
+                            blue: '#2563eb',
+                            light: '#f0f9ff',
+                            gold: '#ca8a04',
+                            silver: '#94a3b8'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .hero-bg {
+            background-image: linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.95)), url('https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #2563eb;
+            margin: 16px auto 0;
+            border-radius: 2px;
+        }
+        .btn-shadow {
+            box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+        .btn-shadow:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+        }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary .faq-icon { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-corporate-blue text-2xl"></i>
+                <div>
+                    <p class="text-xs text-gray-500 font-bold leading-none">あわいコンサルティング</p>
+                    <h1 class="text-lg md:text-xl font-bold text-corporate-navy leading-tight">SCS評価制度対応支援</h1>
+                </div>
+            </div>
+            <div class="hidden md:flex gap-4">
+                <a href="#contact" class="bg-corporate-gold hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded-full transition duration-300 flex items-center gap-2">
+                    <i class="fa-regular fa-envelope"></i> 無料相談
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- FV -->
+    <section class="hero-bg pt-32 pb-20 md:pt-40 md:pb-28 px-4 text-center">
+        <div class="max-w-5xl mx-auto">
+            <p class="text-yellow-400 md:text-xl font-bold mb-4 tracking-wider">取引先から突然求められる前に。</p>
+            <h2 class="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+                SCS評価制度への対応、<br class="hidden md:block">
+                何から始めるべきか整理できていますか？
+            </h2>
+            <p class="text-gray-200 text-base md:text-xl font-medium mb-8 leading-relaxed">
+                サプライチェーン強化に向けたセキュリティ対策評価制度への対応を、<br class="hidden md:block">
+                中小企業向けにわかりやすく整理・支援。<br><br>
+                <span class="text-white font-bold bg-white/20 px-4 py-2 rounded">「何をすればいいかわからない」「どこまで必要かわからない」</span><br>
+                そんな状態からでもご相談いただけます。
+            </p>
+
+            <div class="inline-block bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-6 py-4 mb-10 text-left">
+                <ul class="text-white font-medium text-sm md:text-base space-y-2">
+                    <li><i class="fa-solid fa-check text-yellow-400 mr-2"></i>情シス担当がいない</li>
+                    <li><i class="fa-solid fa-check text-yellow-400 mr-2"></i>ISMSやPマークとの違いがわからない</li>
+                    <li><i class="fa-solid fa-check text-yellow-400 mr-2"></i>取引先要求への備えが不安</li>
+                    <li><i class="fa-solid fa-check text-yellow-400 mr-2"></i>必要以上のコストをかけたくない</li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col justify-center items-center gap-4 max-w-2xl mx-auto">
+                <a href="#contact" class="btn-shadow w-full sm:w-auto bg-corporate-gold hover:bg-yellow-600 text-white text-lg md:text-xl font-bold py-4 px-10 rounded-full flex flex-col items-center justify-center">
+                    <span class="flex items-center gap-2">まずは無料で現状整理をご相談ください</span>
+                    <span class="text-sm font-normal mt-1 opacity-90"><i class="fa-regular fa-envelope"></i> 無料相談フォームへ</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="py-20 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl font-bold text-gray-500 mb-2">このようなお悩みはありませんか？</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-corporate-navy mb-6 section-title">
+                    「制度の内容」よりも、<br>
+                    <span class="text-corporate-blue">“自社は何をすべきか”</span>が見えない
+                </h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8 relative">
+                    <div class="absolute -top-4 left-6 bg-corporate-navy text-white w-10 h-10 flex items-center justify-center rounded-full font-bold text-xl"><i class="fa-solid fa-exclamation"></i></div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4 mt-2">取引先から突然対応を求められそう</h4>
+                    <p class="text-gray-600 leading-relaxed">「今後提出を求められるのでは」という不安はあるものの、何を準備すべきか整理できていない。</p>
+                </div>
+                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8 relative">
+                    <div class="absolute -top-4 left-6 bg-corporate-navy text-white w-10 h-10 flex items-center justify-center rounded-full font-bold text-xl"><i class="fa-solid fa-user-xmark"></i></div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4 mt-2">セキュリティ担当者がいない</h4>
+                    <p class="text-gray-600 leading-relaxed">通常業務だけで手一杯で、制度対応まで整理する余裕がない。</p>
+                </div>
+                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8 relative">
+                    <div class="absolute -top-4 left-6 bg-corporate-navy text-white w-10 h-10 flex items-center justify-center rounded-full font-bold text-xl"><i class="fa-solid fa-circle-question"></i></div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4 mt-2">ISMS・Pマークとの違いがわからない</h4>
+                    <p class="text-gray-600 leading-relaxed">既に取り組んでいる対策が、どこまで活用できるのか判断できない。</p>
+                </div>
+                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8 relative">
+                    <div class="absolute -top-4 left-6 bg-corporate-navy text-white w-10 h-10 flex items-center justify-center rounded-full font-bold text-xl"><i class="fa-solid fa-ruler"></i></div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4 mt-2">どこまで対応すべきかわからない</h4>
+                    <p class="text-gray-600 leading-relaxed">必要以上にコストや工数をかけることへの不安がある。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution / Approach -->
+    <section class="py-20 px-4 bg-corporate-light">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-corporate-navy mb-8 leading-tight section-title">
+                SCS対応で最初に必要なのは、<br>
+                “完璧な対策”ではなく<span class="text-corporate-blue">現状整理</span>です
+            </h2>
+            <div class="bg-white rounded-2xl shadow-md p-8 md:p-12 mb-12 text-left max-w-4xl mx-auto border-t-4 border-corporate-blue">
+                <p class="text-lg md:text-xl leading-relaxed text-gray-700 font-medium mb-6">
+                    制度対応では、最初からすべてを整備する必要はありません。<br><br>
+                    まずは、
+                </p>
+                <ul class="space-y-4 mb-6 ml-4 text-gray-700 font-bold">
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-corporate-gold text-xl mt-1"></i> 取引先から何を求められる可能性があるのか</li>
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-corporate-gold text-xl mt-1"></i> 現在どこまで対策できているのか</li>
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-corporate-gold text-xl mt-1"></i> 不足している部分はどこか</li>
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-corporate-gold text-xl mt-1"></i> 何から優先的に進めるべきか</li>
+                </ul>
+                <p class="text-lg md:text-xl leading-relaxed text-gray-700 font-medium mt-8">
+                    を整理することが重要です。<br><br>
+                    あわいコンサルティングでは、中小企業でも進めやすい形で、現状把握から支援します。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits (01 - 04) -->
+    <section class="py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-corporate-navy mb-16 section-title">ご相談時に整理できること</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                <!-- 01 -->
+                <div class="flex gap-6 items-start">
+                    <div class="text-5xl font-black text-gray-200 leading-none">01</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-corporate-navy mb-3 pb-2 border-b-2 border-corporate-blue inline-block">現在のセキュリティ対策状況</h3>
+                        <p class="text-gray-600 leading-relaxed">既存ルールや運用状況を確認し、現時点で対応できている範囲を整理。</p>
+                    </div>
+                </div>
+                <!-- 02 -->
+                <div class="flex gap-6 items-start">
+                    <div class="text-5xl font-black text-gray-200 leading-none">02</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-corporate-navy mb-3 pb-2 border-b-2 border-corporate-blue inline-block">不足している対策の洗い出し</h3>
+                        <p class="text-gray-600 leading-relaxed">制度対応上、優先度が高いポイントを明確化。</p>
+                    </div>
+                </div>
+                <!-- 03 -->
+                <div class="flex gap-6 items-start">
+                    <div class="text-5xl font-black text-gray-200 leading-none">03</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-corporate-navy mb-3 pb-2 border-b-2 border-corporate-blue inline-block">ISMS・Pマークとの関係整理</h3>
+                        <p class="text-gray-600 leading-relaxed">既存認証との重複や活用可能範囲を確認。</p>
+                    </div>
+                </div>
+                <!-- 04 -->
+                <div class="flex gap-6 items-start">
+                    <div class="text-5xl font-black text-gray-200 leading-none">04</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-corporate-navy mb-3 pb-2 border-b-2 border-corporate-blue inline-block">無理のない進め方の検討</h3>
+                        <p class="text-gray-600 leading-relaxed">人的負担・コストを踏まえた、現実的な対応方針をご提案。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk -->
+    <section class="py-20 px-4 bg-gray-100">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-corporate-navy mb-12 leading-tight section-title">
+                求められてから動くと、<br>
+                <span class="text-red-600">対応負担が一気に増える</span>ことがあります
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-red-500">
+                    <h4 class="text-lg font-bold text-gray-800 mb-3"><i class="fa-solid fa-triangle-exclamation text-red-500 mr-2"></i>急な提出依頼への対応</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">短期間で資料や体制整備を求められる可能性があります。</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-red-500">
+                    <h4 class="text-lg font-bold text-gray-800 mb-3"><i class="fa-solid fa-triangle-exclamation text-red-500 mr-2"></i>社内確認コストの増加</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">ルール・運用・端末管理など、確認作業が想像以上に広がる場合があります。</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-red-500">
+                    <h4 class="text-lg font-bold text-gray-800 mb-3"><i class="fa-solid fa-triangle-exclamation text-red-500 mr-2"></i>必要以上の対策投資</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">整理不足のまま進めることで、本来不要なコストが発生するケースもあります。</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-red-500">
+                    <h4 class="text-lg font-bold text-gray-800 mb-3"><i class="fa-solid fa-triangle-exclamation text-red-500 mr-2"></i>担当者負担の集中</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">少人数企業では、特定担当者へ負荷が偏りやすくなります。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policy -->
+    <section class="py-20 px-4 bg-corporate-navy text-white">
+        <div class="max-w-5xl mx-auto text-center">
+            <p class="text-corporate-gold font-bold mb-4 tracking-widest text-sm">あわいコンサルティングの支援方針</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 leading-tight">
+                「制度説明」ではなく、<br>
+                <span class="text-yellow-400">“現場で進められる状態”</span>を重視します
+            </h2>
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 max-w-3xl mx-auto text-left border border-white/20">
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400 text-xl"></i> 専門用語をできるだけわかりやすく整理</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400 text-xl"></i> 中小企業向けの現実的な進め方を重視</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400 text-xl"></i> 現在の運用を踏まえて改善案をご提案</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400 text-xl"></i> 必要以上に大掛かりな構築を前提にしない</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400 text-xl"></i> 「まず何をするべきか」を明確化</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message & CTA Intro -->
+    <section class="py-20 px-4 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-corporate-navy mb-8 section-title">まずは現在地を整理しませんか？</h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-12">
+                制度対応は、「何もわからない状態」から始まる企業も少なくありません。<br><br>
+                まずは、現状把握と優先順位整理から進めることで、<br class="hidden md:block">無理なく対応準備を進めやすくなります。
+            </p>
+
+            <div class="bg-corporate-light border-2 border-corporate-blue rounded-2xl p-8 shadow-lg max-w-2xl mx-auto">
+                <h3 class="text-2xl font-bold text-corporate-navy mb-6">無料相談受付中</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left font-bold text-gray-700">
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center gap-3"><i class="fa-solid fa-comments text-corporate-blue"></i> 現状整理相談</div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center gap-3"><i class="fa-solid fa-shield-halved text-corporate-blue"></i> SCS対応相談</div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center gap-3"><i class="fa-solid fa-lock text-corporate-blue"></i> セキュリティ対策相談</div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center gap-3"><i class="fa-solid fa-file-contract text-corporate-blue"></i> ISMS/Pマークとの違い相談</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-20 px-4 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-corporate-navy mb-4 section-title">お問い合わせフォーム</h2>
+                <p class="text-gray-600 font-bold">お気軽にご相談ください</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-md p-8 md:p-12">
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">会社名 <span class="text-red-500 text-xs ml-2">必須</span></label>
+                        <input type="text" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-corporate-blue focus:border-transparent outline-none transition" placeholder="株式会社あわいコンサルティング">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">ご担当者名 <span class="text-red-500 text-xs ml-2">必須</span></label>
+                        <input type="text" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-corporate-blue focus:border-transparent outline-none transition" placeholder="山田 太郎">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">メールアドレス <span class="text-red-500 text-xs ml-2">必須</span></label>
+                        <input type="email" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-corporate-blue focus:border-transparent outline-none transition" placeholder="info@example.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">電話番号 <span class="text-gray-400 text-xs ml-2">任意</span></label>
+                        <input type="tel" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-corporate-blue focus:border-transparent outline-none transition" placeholder="03-1234-5678">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">ご相談内容 <span class="text-red-500 text-xs ml-2">必須</span></label>
+                        <textarea rows="5" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-corporate-blue focus:border-transparent outline-none transition" placeholder="現状のセキュリティ対策について相談したいです。"></textarea>
+                    </div>
+                    <div class="text-center pt-4">
+                        <button type="submit" class="btn-shadow w-full md:w-auto bg-corporate-gold hover:bg-yellow-600 text-white text-lg font-bold py-4 px-16 rounded-full transition duration-300">
+                            無料で相談する
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 px-4 bg-white">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-corporate-navy mb-12 section-title">よくあるご質問</h2>
+
+            <div class="space-y-4">
+                <details class="group bg-gray-50 border border-gray-200 rounded-lg" open>
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-gray-800 hover:bg-gray-100 transition duration-300">
+                        <span class="flex items-center gap-3"><span class="text-corporate-blue text-xl">Q.</span>
+                            まだ何をすべきかわからない状態でも相談できますか？</span>
+                        <span class="transition group-open:rotate-180 faq-icon"><i class="fa-solid fa-chevron-down text-gray-400"></i></span>
+                    </summary>
+                    <div class="text-gray-600 p-5 pt-0 mt-2 border-t border-gray-100 bg-white rounded-b-lg flex items-start gap-3">
+                        <span class="text-corporate-gold font-bold text-xl mt-4">A.</span>
+                        <p class="mt-4 leading-relaxed">はい。現状整理からご相談いただけます。</p>
+                    </div>
+                </details>
+
+                <details class="group bg-gray-50 border border-gray-200 rounded-lg">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-gray-800 hover:bg-gray-100 transition duration-300">
+                        <span class="flex items-center gap-3"><span class="text-corporate-blue text-xl">Q.</span>
+                            ISMSやPマーク取得済みですが相談できますか？</span>
+                        <span class="transition group-open:rotate-180 faq-icon"><i class="fa-solid fa-chevron-down text-gray-400"></i></span>
+                    </summary>
+                    <div class="text-gray-600 p-5 pt-0 mt-2 border-t border-gray-100 bg-white rounded-b-lg flex items-start gap-3">
+                        <span class="text-corporate-gold font-bold text-xl mt-4">A.</span>
+                        <p class="mt-4 leading-relaxed">可能です。既存対策を活用しながら整理します。</p>
+                    </div>
+                </details>
+
+                <details class="group bg-gray-50 border border-gray-200 rounded-lg">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-gray-800 hover:bg-gray-100 transition duration-300">
+                        <span class="flex items-center gap-3"><span class="text-corporate-blue text-xl">Q.</span>
+                            小規模企業でも対応は必要ですか？</span>
+                        <span class="transition group-open:rotate-180 faq-icon"><i class="fa-solid fa-chevron-down text-gray-400"></i></span>
+                    </summary>
+                    <div class="text-gray-600 p-5 pt-0 mt-2 border-t border-gray-100 bg-white rounded-b-lg flex items-start gap-3">
+                        <span class="text-corporate-gold font-bold text-xl mt-4">A.</span>
+                        <p class="mt-4 leading-relaxed">取引先要求によっては必要となる可能性があります。<br>まずは現状確認をおすすめします。</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="hero-bg py-24 px-4 text-center">
+        <div class="max-w-4xl mx-auto bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-12 border border-white/20 shadow-2xl">
+            <h2 class="text-2xl md:text-4xl font-bold text-white mb-6 leading-tight">
+                取引先から求められる前に、<br>今できる準備から始めませんか？
+            </h2>
+            <p class="text-yellow-400 text-xl font-bold mb-10">無料相談はこちら</p>
+
+            <div class="flex justify-center">
+                <a href="#contact" class="btn-shadow bg-corporate-gold hover:bg-yellow-600 text-white text-lg md:text-xl font-bold py-4 px-12 rounded-full flex items-center gap-2">
+                    <i class="fa-regular fa-envelope"></i> お問い合わせフォームへ
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-corporate-navy text-white py-12 border-t border-blue-900">
+        <div class="max-w-6xl mx-auto px-4 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <div class="flex items-center gap-2 justify-center md:justify-start mb-2">
+                    <i class="fa-solid fa-shield-halved text-corporate-gold text-2xl"></i>
+                    <span class="font-bold text-xl">あわいコンサルティング</span>
+                </div>
+                <p class="text-gray-400 text-sm">中小企業向け SCS評価制度対応支援</p>
+            </div>
+            <div class="text-sm text-gray-400 flex flex-col items-center md:items-end gap-2">
+                <div class="flex gap-4 mb-2">
+                    <a href="#" class="hover:text-white transition">運営会社</a>
+                    <a href="#" class="hover:text-white transition">プライバシーポリシー</a>
+                </div>
+                <p>&copy; 2024 Awai Consulting. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
