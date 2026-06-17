@@ -30,6 +30,7 @@ body {
   min-width: 320px;
   margin: 0;
   font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: bold;
   color: var(--color-text);
   overflow-x: clip;
 }
@@ -142,6 +143,12 @@ section,
   margin-left: auto;
 }
 
+.site-header__consultation-button {
+  appearance: none;
+  border: 0;
+  outline: none;
+}
+
 /* Common Components */
 .story-cover__heading,
 .supply-chain-risk__heading,
@@ -202,12 +209,52 @@ section,
   box-shadow: var(--shadow-card);
 }
 
+.support-plans__card--sheet,
+.support-plans__card--analysis,
+.support-plans__card--improvement,
+.support-plans__card--consulting {
+  display: flex;
+  flex-direction: column;
+  padding: 48px 24px;
+}
+
+.js-scroll-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.65s ease-out,
+    transform 0.65s ease-out;
+  will-change: opacity, transform;
+}
+
+.js-scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js-scroll-reveal--from-right {
+  transform: translateX(48px);
+}
+
+.js-scroll-reveal--from-right.is-visible {
+  transform: translateX(0);
+}
+
 .concerns__card-list,
-.benefits__card-list,
+.benefits__card-list {
+  display: grid;
+  gap: 28px;
+  margin-top: 56px;
+}
+
 .support-plans__card-list {
   display: grid;
-  gap: 24px;
   margin-top: 56px;
+}
+
+
+.concerns__card-list {
+  margin-top: 100px;
 }
 
 /* Hero */
@@ -232,7 +279,42 @@ section,
   max-height: 100%;
   object-fit: contain;
   object-position: right center;
+}
+
+.hero__background-image,
+.hero__title,
+.hero__lead {
+  opacity: 0;
+  transition:
+    opacity 0.9s ease-out,
+    transform 0.9s ease-out;
+  will-change: opacity, transform;
+}
+
+.hero__background-image {
+  transform: scale(1.02);
+}
+
+.hero__title,
+.hero__lead {
+  transform: translateY(24px);
+}
+
+.hero__lead {
+  display: inline;
+  background: linear-gradient(transparent 20%,
+      #e9e9e950 80%);
+}
+
+.hero.is-loaded .hero__background-image,
+.hero.is-loaded .hero__title,
+.hero.is-loaded .hero__lead {
+  opacity: 1;
   transform: none;
+}
+
+.hero.is-loaded .hero__lead {
+  transition-delay: 0.18s;
 }
 
 .hero__content {
@@ -283,9 +365,7 @@ section,
 /* Story Sequence */
 .story-sequence {
   position: relative;
-  height: calc(
-    (var(--story-panel-count) + 1) * 100svh
-  );
+  height: calc((var(--story-panel-count) + 1) * 100svh);
   padding: 0;
 }
 
@@ -335,7 +415,7 @@ section,
 .story-cover {
   display: flex;
   min-height: 100svh;
-  background: url("./img/cover-bg.png") no-repeat center center;
+  background: url("./img/story-cover-background.png") no-repeat center center;
   color: var(--color-white);
 }
 
@@ -347,6 +427,7 @@ section,
 }
 
 .story-cover__content {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -357,6 +438,15 @@ section,
   border-radius: 50%;
   background: var(--color-light-blue);
   text-align: center;
+}
+
+.story-cover__bottom-image {
+  position: absolute;
+  bottom: -11px;
+  left: 37%;
+  width: min(42%, 150px);
+  transform: translate(-50%, 50%);
+  pointer-events: none;
 }
 
 .story-cover__heading {
@@ -378,7 +468,20 @@ section,
 }
 
 .story-cover__scroll-arrow {
-  font-size: 34px;
+  width: 50px;
+  animation: story-arrow-bounce 1.8s ease-in-out infinite;
+}
+
+@keyframes story-arrow-bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
 }
 
 /* Supply Chain Risk */
@@ -388,8 +491,46 @@ section,
   min-height: 100svh;
   padding-top: calc(var(--header-height) + 32px);
   padding-bottom: 48px;
-  background: var(--color-primary);
+  overflow: hidden;
+  background: var(--color-light-blue) url("./img/background-lightblue.png") center / cover no-repeat;
   color: #dbe7ff;
+}
+
+.supply-chain-risk::before,
+.scs-overview::before,
+.security-action::before,
+.preparation::before {
+  content: "";
+  position: absolute;
+  top: var(--header-height);
+  left: 50%;
+  z-index: 0;
+  width: 90%;
+  height: calc(100svh - var(--header-height));
+  border-radius: 30vw;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.supply-chain-risk::before,
+.security-action::before {
+  background-image: url("./img/background-primary.png");
+}
+
+.scs-overview::before,
+.preparation::before {
+  background-image: url("./img/background-lightblue.png");
+}
+
+.supply-chain-risk__inner,
+.scs-overview__inner,
+.security-action__inner,
+.preparation__inner {
+  position: relative;
+  z-index: 1;
 }
 
 .supply-chain-risk__inner {
@@ -404,7 +545,7 @@ section,
 
 .supply-chain-risk__content {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr ;
+  grid-template-columns: 0.8fr 1.2fr;
   align-items: center;
   gap: 36px;
   width: min(100%, var(--content-width));
@@ -449,6 +590,7 @@ section,
   width: auto;
   max-height: 500px;
   margin-inline: auto;
+  border-radius: 8px;
 }
 
 .supply-chain-risk__diagram {
@@ -459,6 +601,7 @@ section,
 .supply-chain-risk__image {
   width: 100%;
   height: auto;
+  border-radius: 8px;
 }
 
 .supply-chain-risk__impact-box {
@@ -514,11 +657,12 @@ section,
   min-height: 100svh;
   padding-top: calc(var(--header-height) + 32px);
   padding-bottom: 48px;
+  overflow: hidden;
 }
 
 .scs-overview,
 .preparation {
-  background: var(--color-light-blue);
+  background: var(--color-primary) url("./img/background-primary.png") center / cover no-repeat;
 }
 
 .scs-overview__content {
@@ -557,21 +701,31 @@ section,
 }
 
 .scs-overview__stakeholder-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  display: flex;
+  justify-content: center;
   margin-top: 24px;
 }
 
-.scs-overview__stakeholder-item--1,
-.scs-overview__stakeholder-item--2,
-.scs-overview__stakeholder-item--3 {
-  padding: 16px;
+.scs-overview__stakeholder-card {
+  position: relative;
+  width: min(100%, 360px);
+  padding: 18px 24px;
   border-radius: 8px;
   background: var(--color-light-blue);
   color: var(--color-primary);
   font-weight: 700;
-  text-align: center;
+  line-height: 1.9;
+  text-align: left;
+}
+
+.scs-overview__stakeholder-decoration {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 2;
+  width: clamp(92px, 9vw, 138px);
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
 .scs-overview__note {
@@ -582,11 +736,17 @@ section,
 }
 
 .security-action {
-  background: var(--color-white);
+  background: var(--color-light-blue) url("./img/background-lightblue.png") center / cover no-repeat;
+  color: #dbe7ff;
+}
+
+.security-action__heading {
+  color: var(--color-white);
 }
 
 .security-action__lead {
   margin-top: 32px;
+  color: #dbe7ff;
 }
 
 /* Preparation */
@@ -640,10 +800,30 @@ section,
 }
 
 .preparation__issues-box {
+  position: relative;
   padding: 32px;
   border-radius: 12px;
   background: var(--color-white);
   box-shadow: var(--shadow-card);
+}
+
+.preparation__issues-decoration {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: clamp(96px, 10vw, 160px);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.preparation__issues-decoration--left {
+  left: -100px;
+  width: 200px;
+}
+
+.preparation__issues-decoration--right {
+  right: -150px;
+  width: 250px;
 }
 
 .preparation__issues-heading {
@@ -686,11 +866,34 @@ section,
 
 /* Concerns */
 .concerns {
-  background: var(--color-white);
+  background: var(--color-white) url("./img/background-white.png") center / cover no-repeat;
 }
 
 .concerns__card-list {
   grid-template-columns: repeat(3, 1fr);
+}
+
+.concerns__card-decoration {
+  position: absolute;
+  left: 50%;
+  z-index: 2;
+  width: clamp(96px, 10vw, 150px);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.concerns__card-decoration--first {
+  top: -60px;
+}
+
+.concerns__card-decoration--second {
+  top: -50px;
+  width: 220px;
+}
+
+.concerns__card-decoration--third {
+  top: -70px;
+
 }
 
 .concerns__card-number--1,
@@ -727,16 +930,12 @@ section,
 
 /* Support */
 .support {
-  background: #f7faff;
+  background: var(--color-light-blue) url("./img/support-background.png") center / cover no-repeat;
 }
 
 .support__introduction {
   margin-top: 32px;
   text-align: center;
-}
-
-.support__approach-text {
-  margin-top: 14px;
 }
 
 .support__subheading {
@@ -755,6 +954,7 @@ section,
 .support__step-card--planning,
 .support__step-card--implementation,
 .support__step-card--registration {
+  position: relative;
   display: grid;
   grid-template-columns: 180px 1fr;
   align-items: center;
@@ -764,6 +964,40 @@ section,
   border-radius: var(--radius-card);
   background: var(--color-white);
   box-shadow: var(--shadow-card);
+}
+
+.support__step-decoration {
+  position: absolute;
+  top: -34px;
+  z-index: 2;
+  width: clamp(90px, 9vw, 150px);
+  pointer-events: none;
+}
+
+.support__step-decoration--analysis {
+  right: 40px;
+  width: 250px;
+}
+
+.support__step-decoration--implementation {
+  right: 40px;
+  width: 150px;
+}
+
+.support__step-decoration--planning,
+.support__step-decoration--registration {
+  left: 60px;
+}
+
+.support__step-decoration--planning {
+  width: 180px;
+  top: -70px;
+}
+
+.support__step-decoration--registration {
+  width: 120px;
+  top: -100px;
+  ;
 }
 
 .support__step-card--planning,
@@ -826,16 +1060,13 @@ section,
 .support__step-arrow--1,
 .support__step-arrow--2,
 .support__step-arrow--3 {
-  margin-block: 16px;
-  color: var(--color-blue);
-  font-size: 30px;
-  font-weight: 900;
-  text-align: center;
+  width: 50px;
+  margin: 16px auto;
 }
 
 /* Plans / Proposal / Benefits */
-.support-plans {
-  background: var(--color-white);
+.support-plans__inner {
+  padding-top: var(--section-padding);
 }
 
 .support-plans__card-list {
@@ -855,11 +1086,14 @@ section,
 .support-plans__card-heading--analysis,
 .support-plans__card-heading--improvement,
 .support-plans__card-heading--consulting {
-  min-height: 64px;
-  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 108px;
   color: var(--color-primary);
-  font-size: 19px;
+  font-size: 24px;
   line-height: 1.5;
+  text-align: center;
 }
 
 .support-plans__price--1,
@@ -872,7 +1106,12 @@ section,
   background: var(--color-light-blue);
   color: var(--color-primary);
   font-weight: 900;
+  font-size: 24px;
   line-height: 1.8;
+}
+
+.support-plans__amount {
+  font-size: 32px;
 }
 
 .support-plans__card-text--sheet,
@@ -896,8 +1135,24 @@ section,
 }
 
 .proposal {
-  background: var(--color-primary);
+  overflow: hidden;
+  background: var(--color-primary) url("./img/background-primary.png") center / cover no-repeat;
   color: #dbe7ff;
+}
+
+.proposal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url("./img/proposal-overlay.jpg") center / cover no-repeat;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.proposal__inner {
+  position: relative;
+  z-index: 1;
 }
 
 .proposal__heading,
@@ -932,11 +1187,29 @@ section,
 }
 
 .benefits {
-  background: var(--color-white);
+  background: var(--color-white) url("./img/background-white.png") center / cover no-repeat;
 }
 
 .benefits__card-list {
   grid-template-columns: repeat(2, 1fr);
+}
+
+.benefits__card-decoration {
+  position: absolute;
+  bottom: -50px;
+  z-index: 2;
+  width: clamp(84px, 8vw, 140px);
+  pointer-events: none;
+}
+
+.benefits__card-decoration--expertise {
+  left: -50px;
+  transform: rotate(-12deg);
+}
+
+.benefits__card-decoration--flexibility {
+  right: -32px;
+  transform: rotate(12deg);
 }
 
 .benefits__card-heading--1,
@@ -958,13 +1231,13 @@ section,
 
 /* Recommended / Consultation / CTA */
 .recommended {
-  background: #fff7db;
+  background: var(--color-light-blue) url("./img/background-lightblue.png") center / cover no-repeat;
 }
 
 .recommended__item-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 24px;
   width: min(100%, 900px);
   margin: 44px auto 0;
 }
@@ -974,35 +1247,71 @@ section,
 .recommended__item--3,
 .recommended__item--4,
 .recommended__item--5 {
-  padding: 18px 24px;
+  padding: 24px 32px;
   border-radius: 8px;
   background: var(--color-white);
   color: var(--color-primary);
+  font-size: 24px;
   font-weight: 700;
   box-shadow: var(--shadow-card);
 }
 
+.recommended__item--1 p,
+.recommended__item--2 p,
+.recommended__item--3 p,
+.recommended__item--4 p,
+.recommended__item--5 p {
+  display: inline;
+  background: linear-gradient(transparent 60%,
+      #fff3a3 60%);
+}
+
 .consultation {
-  background: var(--color-blue);
+  background: var(--color-primary) url("./img/background-primary.png") center / cover no-repeat;
 }
 
 .consultation__benefit-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: min(100%, 720px);
   margin-top: 40px;
+  margin-inline: auto;
 }
 
 .consultation__benefit-item--1,
 .consultation__benefit-item--2,
 .consultation__benefit-item--3,
 .consultation__benefit-item--4 {
-  padding: 24px 16px;
+  position: relative;
+  width: 75%;
+  margin-inline: auto;
+  padding: 32px 16px;
   border-radius: 8px;
   background: var(--color-white);
   color: var(--color-primary);
+  font-size: 18px;
   font-weight: 900;
   text-align: center;
+}
+
+.consultation__benefit-decoration {
+  position: absolute;
+  top: 25%;
+  z-index: 2;
+  width: clamp(72px, 8vw, 120px);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.consultation__benefit-decoration--1,
+.consultation__benefit-decoration--3 {
+  right: 0px;
+}
+
+.consultation__benefit-decoration--2,
+.consultation__benefit-decoration--4 {
+  left: 0px;
 }
 
 .consultation__button,
@@ -1025,7 +1334,7 @@ section,
 
 /* Contact */
 .contact {
-  background: var(--color-white);
+  background: var(--color-white) url("./img/background-white.png") center / cover no-repeat;
 }
 
 .contact__lead {
@@ -1041,7 +1350,8 @@ section,
 .contact__field--name,
 .contact__field--email,
 .contact__field--phone,
-.contact__field--message {
+.contact__field--message,
+.contact__field--privacy {
   margin-top: 22px;
 }
 
@@ -1052,6 +1362,11 @@ section,
 .contact__label--message {
   color: var(--color-primary);
   font-weight: 700;
+}
+
+.contact__required-mark {
+  color: #dc2626;
+  font-weight: 900;
 }
 
 .contact__input--company,
@@ -1073,6 +1388,45 @@ section,
   resize: vertical;
 }
 
+.contact__privacy-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-primary);
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.contact__privacy-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+}
+
+.contact__required-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #dc2626;
+  color: var(--color-white);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.contact__privacy-note {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.contact__privacy-link {
+  color: var(--color-blue);
+  font-weight: 700;
+}
+
 .contact__button {
   display: flex;
   min-width: 240px;
@@ -1081,14 +1435,12 @@ section,
 
 /* Footer */
 .site-footer {
-  background: #112b59;
+  background: #112b59 url("./img/background-primary.png") center / cover no-repeat;
   color: #dbe7ff;
 }
 
 .site-footer__navigation {
-  display: grid;
-  grid-template-columns: 2fr repeat(4, 1fr);
-  gap: 32px;
+  text-align: center;
 }
 
 .site-footer__company-name {
@@ -1100,6 +1452,30 @@ section,
 .site-footer__tagline {
   margin-top: 18px;
   line-height: 1.7;
+}
+
+.site-footer__consultation-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: 24px;
+  padding: 12px 28px;
+  border: 0;
+  border-radius: 6px;
+  background: #173976;
+  color: var(--color-white);
+  font-weight: 900;
+  border: 1px solid #fff;
+}
+
+.site-footer__privacy-link {
+  display: block;
+  width: fit-content;
+  margin-top: 18px;
+  margin-inline: auto;
+  color: #dbe7ff;
+  font-weight: 700;
 }
 
 .site-footer__service-heading,
@@ -1135,32 +1511,24 @@ section,
     --section-padding: 80px;
   }
 
-  .supply-chain-risk__impact-list,
-  .consultation__benefit-list {
+  .hero__lead {
+    line-height: 1.8;
+  }
+
+  .hero__lead-wrap {
+    max-width: 45%;
+  }
+
+  .hero__badge-list {
+    margin-top: 0;
+  }
+
+  .hero__badge-list img {
+    width: 100px;
+  }
+
+  .supply-chain-risk__impact-list {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .story-sequence {
-    height: auto;
-  }
-
-  .story-sequence__sticky {
-    position: relative;
-    height: auto;
-    overflow: visible;
-  }
-
-  .story-sequence__panel {
-    position: relative;
-    inset: auto;
-    min-height: auto;
-    padding-top: var(--section-padding);
-    padding-bottom: var(--section-padding);
-    opacity: 1 !important;
-    transform: none !important;
-    pointer-events: auto;
-    transition: none;
-    will-change: auto;
   }
 
   .supply-chain-risk,
@@ -1192,6 +1560,10 @@ section,
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .support-plans__card-list {
+    gap: 24px;
+  }
+
   .support__step-card--analysis,
   .support__step-card--planning,
   .support__step-card--implementation,
@@ -1207,9 +1579,38 @@ section,
   .site-footer__navigation {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .benefits__card-decoration {
+    bottom: -40px;
+    width: 125px;
+  }
+
+  .benefits__card-decoration--expertise {
+    left: -50px;
+    transform: rotate(-12deg);
+  }
+
+  .benefits__card-decoration--flexibility {
+    right: -32px;
+    transform: rotate(12deg);
+  }
+
+  .consultation__benefit-decoration {
+    width: 96px;
+  }
+
+  .consultation__benefit-decoration--1,
+  .consultation__benefit-decoration--3 {
+    right: 0px;
+  }
+
+  .consultation__benefit-decoration--2,
+  .consultation__benefit-decoration--4 {
+    left: -5px;
+  }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   :root {
     --side-padding: 16px;
     --section-padding: 64px;
@@ -1243,6 +1644,29 @@ section,
     min-width: 0;
   }
 
+  .story-sequence {
+    height: auto;
+  }
+
+  .story-sequence__sticky {
+    position: relative;
+    height: auto;
+    overflow: visible;
+  }
+
+  .story-sequence__panel {
+    position: relative;
+    inset: auto;
+    min-height: auto;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto;
+    transition: none;
+    will-change: auto;
+  }
+
   .story-cover__content {
     width: min(100%, 560px);
     padding: 56px 24px;
@@ -1260,6 +1684,55 @@ section,
   .support-plans__card-list,
   .site-footer__navigation {
     grid-template-columns: 1fr;
+  }
+
+  .concerns__card-decoration {
+    top: -32px;
+    width: 96px;
+  }
+
+  .scs-overview__stakeholder-decoration {
+    right: 8px;
+    width: 88px;
+  }
+
+  .preparation__issues-decoration {
+    width: 88px;
+  }
+
+  .preparation__issues-decoration--left {
+    left: 8px;
+  }
+
+  .preparation__issues-decoration--right {
+    right: 8px;
+  }
+
+  .consultation__benefit-decoration {
+    width: 72px;
+  }
+
+  .consultation__benefit-decoration--1,
+  .consultation__benefit-decoration--3 {
+    right: 8px;
+  }
+
+  .consultation__benefit-decoration--2,
+  .consultation__benefit-decoration--4 {
+    left: 8px;
+  }
+
+  .benefits__card-decoration {
+    bottom: -28px;
+    width: 80px;
+  }
+
+  .benefits__card-decoration--expertise {
+    left: 10px;
+  }
+
+  .benefits__card-decoration--flexibility {
+    right: 10px;
   }
 
   .support__step-card--analysis,
@@ -1284,6 +1757,21 @@ section,
     order: -1;
   }
 
+  .support__step-decoration {
+    top: -24px;
+    width: 90px;
+  }
+
+  .support__step-decoration--analysis,
+  .support__step-decoration--implementation {
+    right: 12px;
+  }
+
+  .support__step-decoration--planning,
+  .support__step-decoration--registration {
+    left: 12px;
+  }
+
   .support-plans__card-heading--sheet,
   .support-plans__card-heading--analysis,
   .support-plans__card-heading--improvement,
@@ -1293,5 +1781,28 @@ section,
 
   br {
     display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-cover__scroll-arrow {
+    animation: none;
+  }
+
+  .hero__background-image,
+  .hero__title,
+  .hero__lead {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+
+  .js-scroll-reveal,
+  .js-scroll-reveal--from-right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
   }
 }
