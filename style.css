@@ -474,7 +474,7 @@ section,
 
 .story-cover__heading {
   color: var(--color-primary);
-  font-size: clamp(34px, calc(48 / 1920 * 100vw), 48px);
+  font-size: clamp(34px, calc(42 / 1920 * 100vw), 42px);
 }
 
 .story-cover__lead {
@@ -589,7 +589,7 @@ section,
   align-items: center;
   gap: var(--space-36);
   width: min(100%, var(--content-width));
-  margin: var(--space-28) auto 0;
+  margin: var(--space-16) auto 0;
 }
 
 .supply-chain-risk__introduction {
@@ -645,7 +645,7 @@ section,
 }
 
 .supply-chain-risk__impact-box {
-  margin-top: var(--space-28);
+  margin-top: var(--space-16);
   padding: clamp(18px, calc(22 / 1920 * 100vw), 22px);
   border: 1px solid #d8e2f0;
   border-radius: 8px;
@@ -680,7 +680,7 @@ section,
 }
 
 .supply-chain-risk__conclusion {
-  margin-top: var(--space-28);
+  margin-top: var(--space-16);
   color: var(--color-white);
   font-size: clamp(18px, calc(20 / 1920 * 100vw), 20px);
   font-weight: 700;
@@ -1398,6 +1398,14 @@ section,
   margin-top: clamp(32px, calc(44 / 1920 * 100vw), 44px);
 }
 
+.contact__honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .contact__field--company,
 .contact__field--name,
 .contact__field--email,
@@ -1479,10 +1487,35 @@ section,
   font-weight: 700;
 }
 
+.contact__field-error,
+.contact__feedback {
+  min-height: 1.6em;
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.contact__field-error,
+.contact__feedback--error {
+  color: #dc2626;
+}
+
+.contact__feedback--success {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-align: center;
+}
+
 .contact__button {
   display: flex;
   min-width: clamp(200px, calc(240 / 1920 * 100vw), 240px);
   margin: var(--space-32) auto 0;
+}
+
+.contact__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* Footer */

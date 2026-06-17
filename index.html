@@ -7,6 +7,7 @@
     <title class="document__title--1">SCS評価制度対応支援 | サプライチェーン強化に向けたセキュリティ対策評価制度</title>
     <link class="document__preconnect--1" rel="preconnect" href="https://fonts.googleapis.com">
     <link class="document__preconnect--2" rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/svg+xml" href="./img/awai-favicon.svg" />
     <link class="document__font--1"
         href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&amp;display=swap"
         rel="stylesheet">
@@ -156,7 +157,8 @@
                         <h2 class="security-action__heading">
                             SECURITY ACTIONとSCS評価制度の関係</h2>
                         <p class="security-action__lead">
-                            企業のセキュリティ対策レベルは、<br class="security-action__line-break--sp">★（星）で評価されます。<br class="security-action__line-break--1">SCS評価制度は、SECURITY
+                            企業のセキュリティ対策レベルは、<br class="security-action__line-break--sp">★（星）で評価されます。<br
+                                class="security-action__line-break--1">SCS評価制度は、SECURITY
                             ACTION（★1・★2）に続く位置づけとして、<br class="security-action__line-break--2">★3からスタートする制度となっています。</p>
                         <div class="security-action__diagram">
                             <img class="security-action__image" src="img/security-action-diagram.png"
@@ -467,7 +469,7 @@
             </div>
         </section>
 
-        <section class="contact">
+        <section class="contact" id="contact-form">
             <div class="contact__inner">
                 <div class="contact__heading-wrap">
                     <h2 class="contact__heading">
@@ -479,13 +481,20 @@
                             class="contact__line-break--sp">無理な営業は一切行いません。<br
                             class="contact__line-break--2">※担当者より１営業日以内にメールまたは電話にて連絡いたします！</p>
                 </div>
-                <form class="contact__form--1">
+                <form class="contact__form--1" id="contactForm" action="contact.php" method="POST" novalidate>
+                    <input type="hidden" name="return_to" value="index.html#contact-form">
+                    <div class="contact__honeypot" aria-hidden="true">
+                        <label>
+                            Website
+                            <input type="text" name="website" tabindex="-1" autocomplete="off">
+                        </label>
+                    </div>
                     <div class="contact__field--company">
                         <div class="contact__label-wrap--company">
                             <label class="contact__label--company" for="company">
                                 会社名 <span class="contact__required-mark">*</span></label>
                         </div>
-                        <input class="contact__input--company" id="company" name="company" type="text"
+                        <input class="contact__input--company" id="company" name="company_name" type="text"
                             placeholder="株式会社〇〇" required>
                     </div>
                     <div class="contact__field--name">
@@ -493,7 +502,7 @@
                             <label class="contact__label--name" for="name">
                                 担当者名 <span class="contact__required-mark">*</span></label>
                         </div>
-                        <input class="contact__input--name" id="name" name="name" type="text" placeholder="山田 太郎"
+                        <input class="contact__input--name" id="name" name="person_name" type="text" placeholder="山田 太郎"
                             required>
                     </div>
                     <div class="contact__field--email">
@@ -502,15 +511,16 @@
                                 メールアドレス <span class="contact__required-mark">*</span></label>
                         </div>
                         <input class="contact__input--email" id="email" name="email" type="email"
-                            placeholder="example@company.com" required>
+                            placeholder="example@company.com" required aria-describedby="contactEmailError">
+                        <p class="contact__field-error" id="contactEmailError" role="alert"></p>
                     </div>
                     <div class="contact__field--phone">
                         <div class="contact__label-wrap--phone">
                             <label class="contact__label--phone" for="phone">
-                                電話番号 <span class="contact__required-mark">*</span></label>
+                                電話番号</label>
                         </div>
                         <input class="contact__input--phone" id="phone" name="phone" type="tel"
-                            placeholder="03-0000-0000" required>
+                            placeholder="03-0000-0000">
                     </div>
                     <div class="contact__field--message">
                         <div class="contact__label-wrap--message">
@@ -522,7 +532,7 @@
                     </div>
                     <div class="contact__field--privacy">
                         <label class="contact__privacy-label" for="privacy-agreement">
-                            <input class="contact__privacy-checkbox" id="privacy-agreement" name="privacy-agreement"
+                            <input class="contact__privacy-checkbox" id="privacy-agreement" name="privacy_consent"
                                 type="checkbox" required>
                             <span class="contact__privacy-text">当社規定の「個人情報の取扱い」の内容に同意する</span>
                             <span class="contact__required-label">必須</span>
@@ -532,7 +542,8 @@
                                 href="https://awai-consulting.co.jp/privacy-handling">個人情報の取扱い</a>」をご一読の上、内容に同意いただけましたら上記にチェックをしてください。
                         </p>
                     </div>
-                    <button class="contact__button">
+                    <p class="contact__feedback" id="contactFeedback" aria-live="polite"></p>
+                    <button class="contact__button" type="submit" disabled>
                         <span class="contact__submit-label">
                             今すぐ無料相談する</span>
                     </button>

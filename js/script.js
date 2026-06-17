@@ -29,6 +29,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
+  const revealStoryPanel = (panel) => {
+    if (!panel) {
+      return;
+    }
+
+    panel.querySelectorAll(".js-scroll-reveal").forEach((element) => {
+      element.classList.add("is-visible");
+    });
+  };
+
   if (hero) {
     window.requestAnimationFrame(() => {
       hero.classList.add("is-loaded");
@@ -78,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (index === safeIndex) {
         panel.classList.add("is-active");
+        revealStoryPanel(panel);
       } else if (index < safeIndex) {
         panel.classList.add("is-exit");
       } else {
@@ -191,6 +202,10 @@ document.addEventListener("DOMContentLoaded", () => {
     element.classList.add("js-scroll-reveal");
   });
 
+  if (desktopStory.matches && activeStoryIndex >= 0) {
+    revealStoryPanel(storyPanels[activeStoryIndex]);
+  }
+
   const showRevealElements = (elements) => {
     elements.forEach((element) => {
       element.classList.add("is-visible");
@@ -219,6 +234,169 @@ document.addEventListener("DOMContentLoaded", () => {
 
     revealElements.forEach((element) => {
       revealObserver.observe(element);
+    });
+  }
+
+  const contactForm = document.getElementById("contactForm");
+
+  if (contactForm) {
+    const submitButton = contactForm.querySelector(".contact__button");
+    const submitLabel = contactForm.querySelector(".contact__submit-label");
+    const feedback = document.getElementById("contactFeedback");
+    const emailInput = contactForm.querySelector('[name="email"]');
+    const emailError = document.getElementById("contactEmailError");
+    const requiredFields = [
+      contactForm.querySelector('[name="company_name"]'),
+      contactForm.querySelector('[name="person_name"]'),
+      emailInput,
+      contactForm.querySelector('[name="message"]'),
+    ].filter(Boolean);
+    const privacyInput = contactForm.querySelector('[name="privacy_consent"]');
+    const initialSubmitLabel = submitLabel?.textContent.trim() || "今すぐ無料相談する";
+    let isSubmitting = false;
+
+    const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    const setFeedback = (message = "", type = "") => {
+      if (!feedback) {
+        return;
+      }
+
+      feedback.textContent = message;
+      feedback.className = "contact__feedback";
+
+      if (type) {
+        feedback.classList.add(`contact__feedback--${type}`);
+      }
+    };
+
+    const syncEmailError = () => {
+      if (!emailInput || !emailError) {
+        return true;
+      }
+
+      const email = emailInput.value.trim();
+      const hasError = email !== "" && !isValidEmail(email);
+
+      emailInput.setCustomValidity(
+        hasError ? "メールアドレスの形式が正しくありません。" : ""
+      );
+      emailInput.setAttribute("aria-invalid", hasError ? "true" : "false");
+      emailError.textContent = hasError
+        ? "メールアドレスの形式が正しくありません。"
+        : "";
+
+      return !hasError;
+    };
+
+    const validateContactForm = () => {
+      const requiredFilled = requiredFields.every(
+        (field) => field.value.trim() !== ""
+      );
+      const agreed = Boolean(privacyInput?.checked);
+      const emailValid = syncEmailError();
+      const canSubmit = requiredFilled && agreed && emailValid && !isSubmitting;
+
+      if (submitButton) {
+        submitButton.disabled = !canSubmit;
+      }
+
+      return canSubmit;
+    };
+
+    const applyContactFeedbackFromQuery = () => {
+      const params = new URLSearchParams(window.location.search);
+      const status = params.get("contact_status");
+      const message = params.get("contact_message");
+
+      if (!status || !message) {
+        return;
+      }
+
+      setFeedback(message, status === "success" ? "success" : "error");
+      params.delete("contact_status");
+      params.delete("contact_message");
+
+      const nextSearch = params.toString();
+      const nextUrl =
+        window.location.pathname +
+        (nextSearch ? `?${nextSearch}` : "") +
+        window.location.hash;
+      window.history.replaceState({}, document.title, nextUrl);
+    };
+
+    [...requiredFields, privacyInput].filter(Boolean).forEach((field) => {
+      field.addEventListener("input", validateContactForm);
+      field.addEventListener("change", validateContactForm);
+    });
+
+    applyContactFeedbackFromQuery();
+    validateContactForm();
+
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!validateContactForm()) {
+        contactForm.reportValidity();
+        return;
+      }
+
+      const formData = new FormData(contactForm);
+      isSubmitting = true;
+      setFeedback("");
+
+      if (submitButton) {
+        submitButton.disabled = true;
+      }
+
+      if (submitLabel) {
+        submitLabel.textContent = "送信中...";
+      }
+
+      fetch(contactForm.getAttribute("action") || "contact.php", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+        .then((response) =>
+          response.json().then((result) => {
+            if (!response.ok) {
+              const fields = result?.error?.fields;
+              const firstFieldError = fields ? Object.values(fields)[0] : "";
+              const message =
+                firstFieldError ||
+                result?.error?.message ||
+                "送信に失敗しました。時間をおいて再度お試しください。";
+
+              throw new Error(message);
+            }
+
+            setFeedback(
+              result?.data?.message ||
+                "お問い合わせありがとうございました。担当者よりご連絡いたします。",
+              "success"
+            );
+            contactForm.reset();
+          })
+        )
+        .catch((error) => {
+          setFeedback(
+            error?.message ||
+              "送信に失敗しました。時間をおいて再度お試しください。",
+            "error"
+          );
+        })
+        .finally(() => {
+          isSubmitting = false;
+
+          if (submitLabel) {
+            submitLabel.textContent = initialSubmitLabel;
+          }
+
+          validateContactForm();
+        });
     });
   }
 });
