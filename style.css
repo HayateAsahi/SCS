@@ -9,13 +9,33 @@
   --color-cta: #ca8a04;
   --content-width: 1240px;
   --narrow-width: 960px;
-  --side-padding: 24px;
-  --section-padding: 96px;
+  --hero-lead-width: 682px;
+  --supply-chain-risk-width: 1260px;
+  --supply-chain-risk-side-padding: var(--side-padding);
+  --scs-overview-side-padding: var(--side-padding);
+  --security-action-side-padding: var(--side-padding);
+  --preparation-side-padding: var(--side-padding);
+  --side-padding: clamp(18px, calc(24 / 1920 * 100vw), 24px);
+  --section-padding: clamp(72px, calc(96 / 1920 * 100vw), 96px);
   --header-height: 78px;
   --story-panel-count: 5;
   --story-idle-scroll-count-per-panel: 1;
   --radius-card: 16px;
   --shadow-card: 0 12px 32px rgba(15, 23, 42, 0.08);
+  --space-12: clamp(10px, calc(12 / 1920 * 100vw), 12px);
+  --space-16: clamp(12px, calc(16 / 1920 * 100vw), 16px);
+  --space-18: clamp(14px, calc(18 / 1920 * 100vw), 18px);
+  --space-20: clamp(16px, calc(20 / 1920 * 100vw), 20px);
+  --space-24: clamp(18px, calc(24 / 1920 * 100vw), 24px);
+  --space-28: clamp(20px, calc(28 / 1920 * 100vw), 28px);
+  --space-32: clamp(24px, calc(32 / 1920 * 100vw), 32px);
+  --space-36: clamp(26px, calc(36 / 1920 * 100vw), 36px);
+  --space-40: clamp(28px, calc(40 / 1920 * 100vw), 40px);
+  --space-48: clamp(32px, calc(48 / 1920 * 100vw), 48px);
+  --space-56: clamp(40px, calc(56 / 1920 * 100vw), 56px);
+  --space-64: clamp(44px, calc(64 / 1920 * 100vw), 64px);
+  --space-80: clamp(56px, calc(80 / 1920 * 100vw), 80px);
+  --space-96: clamp(64px, calc(96 / 1920 * 100vw), 96px);
 }
 
 *,
@@ -166,7 +186,7 @@ section,
 .contact__heading {
   margin: 0;
   color: var(--color-primary);
-  font-size: clamp(30px, 3vw, 40px);
+  font-size: clamp(30px, calc(40 / 1920 * 100vw), 40px);
   font-weight: 700;
   line-height: 1.35;
   text-align: center;
@@ -181,8 +201,8 @@ section,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 12px 28px;
+  min-height: clamp(42px, calc(48 / 1920 * 100vw), 48px);
+  padding: var(--space-12) var(--space-28);
   border: 0;
   border-radius: 6px;
   background: var(--color-cta);
@@ -203,7 +223,7 @@ section,
 .support-plans__card--improvement,
 .support-plans__card--consulting {
   position: relative;
-  padding: 32px;
+  padding: var(--space-32);
   border-radius: var(--radius-card);
   background: var(--color-white);
   box-shadow: var(--shadow-card);
@@ -215,7 +235,7 @@ section,
 .support-plans__card--consulting {
   display: flex;
   flex-direction: column;
-  padding: 48px 24px;
+  padding: var(--space-48) var(--space-24);
 }
 
 .js-scroll-reveal {
@@ -243,25 +263,25 @@ section,
 .concerns__card-list,
 .benefits__card-list {
   display: grid;
-  gap: 28px;
-  margin-top: 56px;
+  gap: var(--space-28);
+  margin-top: var(--space-56);
 }
 
 .support-plans__card-list {
   display: grid;
-  margin-top: 56px;
+  margin-top: var(--space-56);
 }
 
 
 .concerns__card-list {
-  margin-top: 100px;
+  margin-top: clamp(72px, calc(100 / 1920 * 100vw), 100px);
 }
 
 /* Hero */
 .hero {
   display: flex;
   min-height: max(100svh, calc(100vw * 1734 / 1835));
-  padding-top: 130px;
+  padding-top: clamp(92px, calc(130 / 1920 * 100vw), 130px);
   background: var(--color-light-blue);
   isolation: isolate;
   overflow: hidden;
@@ -322,44 +342,47 @@ section,
   margin-inline: auto;
 }
 
-.hero__title-wrap,
-.hero__lead-wrap {
+.hero__title-wrap {
   max-width: 682px;
+}
+
+.hero__lead-wrap {
+  max-width: var(--hero-lead-width);
 }
 
 .hero__title {
   color: var(--color-primary-dark);
-  font-size: clamp(42px, 4.2vw, 62px);
+  font-size: clamp(42px, calc(62 / 1920 * 100vw), 62px);
   font-weight: 700;
   line-height: 1.3;
 }
 
 .hero__lead {
-  margin-top: 28px;
+  margin-top: var(--space-28);
   color: var(--color-text);
-  font-size: 17px;
+  font-size: clamp(15px, calc(17 / 1920 * 100vw), 17px);
   line-height: 1.8;
 }
 
 .hero__badge-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 24px;
+  gap: var(--space-16);
+  margin-top: var(--space-24);
 }
 
 .hero__badge-image--support,
 .hero__badge-image--diagnosis,
 .hero__badge-image--readiness {
-  width: 150px;
-  height: 150px;
+  width: clamp(100px, calc(150 / 1920 * 100vw), 150px);
+  height: clamp(100px, calc(150 / 1920 * 100vw), 150px);
   object-fit: contain;
 }
 
 .hero__consultation-button {
-  margin-top: 24px;
-  min-width: 280px;
-  font-size: 18px;
+  margin-top: var(--space-24);
+  min-width: clamp(220px, calc(280 / 1920 * 100vw), 280px);
+  font-size: clamp(16px, calc(18 / 1920 * 100vw), 18px);
 }
 
 /* Story Sequence */
@@ -381,8 +404,8 @@ section,
   inset: 0;
   width: 100%;
   min-height: 100svh;
-  padding-top: calc(var(--header-height) + 32px);
-  padding-bottom: 48px;
+  padding-top: calc(var(--header-height) + var(--space-32));
+  padding-bottom: var(--space-48);
   opacity: 0;
   transform: translateX(80px);
   pointer-events: none;
@@ -423,7 +446,7 @@ section,
   display: grid;
   place-items: center;
   align-content: center;
-  gap: 40px;
+  gap: var(--space-40);
 }
 
 .story-cover__content {
@@ -434,7 +457,7 @@ section,
   justify-content: center;
   width: min(70vw, 600px);
   aspect-ratio: 1;
-  padding: 64px;
+  padding: var(--space-64);
   border-radius: 50%;
   background: var(--color-light-blue);
   text-align: center;
@@ -451,24 +474,24 @@ section,
 
 .story-cover__heading {
   color: var(--color-primary);
-  font-size: clamp(34px, 2vw, 48px);
+  font-size: clamp(34px, calc(48 / 1920 * 100vw), 48px);
 }
 
 .story-cover__lead {
-  margin-top: 28px;
+  margin-top: var(--space-28);
   color: var(--color-primary);
-  font-size: 18px;
+  font-size: clamp(16px, calc(18 / 1920 * 100vw), 18px);
   line-height: 1.9;
 }
 
 .story-cover__scroll-guide {
-  margin-top: 32px;
+  margin-top: var(--space-32);
   color: var(--color-cta);
   font-weight: 700;
 }
 
 .story-cover__scroll-arrow {
-  width: 50px;
+  width: clamp(36px, calc(50 / 1920 * 100vw), 50px);
   animation: story-arrow-bounce 1.8s ease-in-out infinite;
 }
 
@@ -489,8 +512,8 @@ section,
   display: flex;
   align-items: center;
   min-height: 100svh;
-  padding-top: calc(var(--header-height) + 32px);
-  padding-bottom: 48px;
+  padding-top: calc(var(--header-height) + var(--space-32));
+  padding-bottom: var(--space-48);
   overflow: hidden;
   background: var(--color-light-blue) url("./img/background-lightblue.png") center / cover no-repeat;
   color: #dbe7ff;
@@ -505,7 +528,7 @@ section,
   top: var(--header-height);
   left: 50%;
   z-index: 0;
-  width: 90%;
+  width: clamp(80%, 90vw, 90%);
   height: calc(100svh - var(--header-height));
   border-radius: 30vw;
   background-position: center;
@@ -534,8 +557,25 @@ section,
 }
 
 .supply-chain-risk__inner {
+  width: min(calc(100% - var(--supply-chain-risk-side-padding) * 2),
+      var(--supply-chain-risk-width));
   display: flex;
   flex-direction: column;
+}
+
+.scs-overview__inner {
+  width: min(calc(100% - var(--scs-overview-side-padding) * 2),
+      var(--content-width));
+}
+
+.security-action__inner {
+  width: min(calc(100% - var(--security-action-side-padding) * 2),
+      var(--content-width));
+}
+
+.preparation__inner {
+  width: min(calc(100% - var(--preparation-side-padding) * 2),
+      var(--content-width));
 }
 
 .supply-chain-risk__heading {
@@ -547,25 +587,25 @@ section,
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   align-items: center;
-  gap: 36px;
+  gap: var(--space-36);
   width: min(100%, var(--content-width));
-  margin: 28px auto 0;
+  margin: var(--space-28) auto 0;
 }
 
 .supply-chain-risk__introduction {
   width: 100%;
   margin: 0;
-  font-size: 17px;
+  font-size: clamp(15px, calc(17 / 1920 * 100vw), 17px);
   line-height: 1.7;
 }
 
 .supply-chain-risk__attack-description {
-  margin-top: 18px;
+  margin-top: var(--space-18);
 }
 
 .supply-chain-risk__example-box {
-  margin-top: 20px;
-  padding: 20px;
+  margin-top: var(--space-20);
+  padding: var(--space-20);
   border: 1px solid #5e79aa;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.1);
@@ -576,19 +616,19 @@ section,
 }
 
 .supply-chain-risk__example-list {
-  margin-top: 12px;
+  margin-top: var(--space-12);
   line-height: 1.8;
 }
 
 .security-action__diagram {
   width: min(100%, 1160px);
-  margin: 28px auto 0;
+  margin: var(--space-28) auto 0;
   text-align: center;
 }
 
 .security-action__image {
   width: auto;
-  max-height: 500px;
+  max-height: clamp(360px, calc(500 / 1920 * 100vw), 500px);
   margin-inline: auto;
   border-radius: 8px;
 }
@@ -605,8 +645,8 @@ section,
 }
 
 .supply-chain-risk__impact-box {
-  margin-top: 28px;
-  padding: 22px;
+  margin-top: var(--space-28);
+  padding: clamp(18px, calc(22 / 1920 * 100vw), 22px);
   border: 1px solid #d8e2f0;
   border-radius: 8px;
   background: var(--color-white);
@@ -616,7 +656,7 @@ section,
 
 .supply-chain-risk__impact-heading {
   color: var(--color-primary);
-  font-size: 20px;
+  font-size: clamp(18px, calc(20 / 1920 * 100vw), 20px);
   font-weight: 900;
   text-align: center;
 }
@@ -624,15 +664,15 @@ section,
 .supply-chain-risk__impact-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-top: 18px;
+  gap: var(--space-16);
+  margin-top: var(--space-18);
 }
 
 .supply-chain-risk__impact-item--1,
 .supply-chain-risk__impact-item--2,
 .supply-chain-risk__impact-item--3,
 .supply-chain-risk__impact-item--4 {
-  padding: 12px 16px;
+  padding: var(--space-12) var(--space-16);
   border-radius: 8px;
   background: var(--color-light-blue);
   font-weight: 700;
@@ -640,9 +680,9 @@ section,
 }
 
 .supply-chain-risk__conclusion {
-  margin-top: 28px;
+  margin-top: var(--space-28);
   color: var(--color-white);
-  font-size: 20px;
+  font-size: clamp(18px, calc(20 / 1920 * 100vw), 20px);
   font-weight: 700;
   line-height: 1.7;
   text-align: center;
@@ -655,8 +695,8 @@ section,
   display: flex;
   align-items: center;
   min-height: 100svh;
-  padding-top: calc(var(--header-height) + 32px);
-  padding-bottom: 48px;
+  padding-top: calc(var(--header-height) + var(--space-32));
+  padding-bottom: var(--space-48);
   overflow: hidden;
 }
 
@@ -666,32 +706,32 @@ section,
 }
 
 .scs-overview__content {
-  margin-top: 48px;
+  margin-top: var(--space-48);
 }
 
 .scs-overview__description,
 .scs-overview__scope {
-  padding: 28px;
+  padding: var(--space-28);
   border-radius: 12px;
   background: var(--color-white);
   box-shadow: var(--shadow-card);
 }
 
 .scs-overview__scope {
-  margin-top: 24px;
+  margin-top: var(--space-24);
 }
 
 .scs-overview__description-text,
 .scs-overview__purpose-text,
 .scs-overview__scope-text,
 .security-action__lead {
-  font-size: 17px;
+  font-size: clamp(15px, calc(17 / 1920 * 100vw), 17px);
   line-height: 1.8;
   text-align: center;
 }
 
 .scs-overview__purpose-text {
-  margin-top: 20px;
+  margin-top: var(--space-20);
 }
 
 .scs-overview__accent--1,
@@ -703,13 +743,13 @@ section,
 .scs-overview__stakeholder-list {
   display: flex;
   justify-content: center;
-  margin-top: 24px;
+  margin-top: var(--space-24);
 }
 
 .scs-overview__stakeholder-card {
   position: relative;
   width: min(100%, 360px);
-  padding: 18px 24px;
+  padding: var(--space-18) var(--space-24);
   border-radius: 8px;
   background: var(--color-light-blue);
   color: var(--color-primary);
@@ -723,13 +763,13 @@ section,
   top: 50%;
   right: 0;
   z-index: 2;
-  width: clamp(92px, 9vw, 138px);
+  width: clamp(92px, calc(138 / 1920 * 100vw), 138px);
   transform: translateY(-50%);
   pointer-events: none;
 }
 
 .scs-overview__note {
-  margin-top: 32px;
+  margin-top: var(--space-32);
   color: #64748b;
   font-size: 14px;
   text-align: center;
@@ -745,15 +785,23 @@ section,
 }
 
 .security-action__lead {
-  margin-top: 32px;
+  margin-top: var(--space-32);
   color: #dbe7ff;
+}
+
+.security-action__line-break--sp {
+  display: none;
+}
+
+.contact__line-break--sp {
+  display: none;
 }
 
 /* Preparation */
 .preparation__subheading {
-  margin-top: 24px;
+  margin-top: var(--space-24);
   color: var(--color-primary);
-  font-size: 20px;
+  font-size: clamp(18px, calc(20 / 1920 * 100vw), 20px);
   font-weight: 700;
   text-align: center;
 }
@@ -761,19 +809,19 @@ section,
 .preparation__question-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
+  gap: var(--space-28);
   width: min(100%, 1000px);
-  margin: 32px auto 0;
+  margin: var(--space-32) auto 0;
 }
 
 .preparation__question-card--security-status,
 .preparation__question-card--scs-status {
   position: relative;
-  padding: 28px;
+  padding: var(--space-28);
   border-radius: 12px;
   background: var(--color-primary);
   color: var(--color-white);
-  font-size: 20px;
+  font-size: clamp(18px, calc(20 / 1920 * 100vw), 20px);
   font-weight: 700;
   line-height: 1.6;
   text-align: center;
@@ -792,7 +840,7 @@ section,
 }
 
 .preparation__down-arrow {
-  margin-block: 32px 20px;
+  margin-block: var(--space-32) var(--space-20);
   color: var(--color-primary);
   font-size: 34px;
   font-weight: 900;
@@ -801,7 +849,7 @@ section,
 
 .preparation__issues-box {
   position: relative;
-  padding: 32px;
+  padding: var(--space-32);
   border-radius: 12px;
   background: var(--color-white);
   box-shadow: var(--shadow-card);
@@ -811,24 +859,24 @@ section,
   position: absolute;
   top: 50%;
   z-index: 2;
-  width: clamp(96px, 10vw, 160px);
+  width: clamp(96px, calc(160 / 1920 * 100vw), 160px);
   transform: translateY(-50%);
   pointer-events: none;
 }
 
 .preparation__issues-decoration--left {
   left: -100px;
-  width: 200px;
+  width: clamp(120px, calc(200 / 1920 * 100vw), 200px);
 }
 
 .preparation__issues-decoration--right {
   right: -150px;
-  width: 250px;
+  width: clamp(150px, calc(250 / 1920 * 100vw), 250px);
 }
 
 .preparation__issues-heading {
   color: var(--color-primary);
-  font-size: 20px;
+  font-size: clamp(18px, calc(20 / 1920 * 100vw), 20px);
   font-weight: 900;
   text-align: center;
 }
@@ -836,14 +884,14 @@ section,
 .preparation__issue-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 24px;
+  gap: var(--space-16);
+  margin-top: var(--space-24);
 }
 
 .preparation__issue-item--1,
 .preparation__issue-item--2,
 .preparation__issue-item--3 {
-  padding: 18px;
+  padding: var(--space-18);
   border-radius: 8px;
   background: var(--color-light-blue);
   color: var(--color-primary);
@@ -853,13 +901,13 @@ section,
 
 .preparation__issues-note,
 .preparation__conclusion {
-  margin-top: 24px;
+  margin-top: var(--space-24);
   text-align: center;
 }
 
 .preparation__conclusion {
   color: var(--color-primary);
-  font-size: 20px;
+  font-size: clamp(18px, calc(20 / 1920 * 100vw), 20px);
   font-weight: 700;
   line-height: 1.7;
 }
@@ -877,7 +925,7 @@ section,
   position: absolute;
   left: 50%;
   z-index: 2;
-  width: clamp(96px, 10vw, 150px);
+  width: clamp(96px, calc(150 / 1920 * 100vw), 150px);
   transform: translateX(-50%);
   pointer-events: none;
 }
@@ -888,7 +936,7 @@ section,
 
 .concerns__card-decoration--second {
   top: -50px;
-  width: 220px;
+  width: clamp(132px, calc(220 / 1920 * 100vw), 220px);
 }
 
 .concerns__card-decoration--third {
@@ -900,30 +948,30 @@ section,
 .concerns__card-number--2,
 .concerns__card-number--3 {
   color: var(--color-blue);
-  font-size: 34px;
+  font-size: clamp(28px, calc(34 / 1920 * 100vw), 34px);
   font-weight: 900;
 }
 
 .concerns__card-heading--first,
 .concerns__card-heading--second,
 .concerns__card-heading--third {
-  margin-top: 20px;
+  margin-top: var(--space-20);
   color: var(--color-primary);
-  font-size: 20px;
+  font-size: clamp(18px, calc(20 / 1920 * 100vw), 20px);
   line-height: 1.5;
 }
 
 .concerns__card-text--first,
 .concerns__card-text--second,
 .concerns__card-text--third {
-  margin-top: 18px;
+  margin-top: var(--space-18);
   line-height: 1.8;
 }
 
 .concerns__conclusion {
-  margin-top: 44px;
+  margin-top: clamp(32px, calc(44 / 1920 * 100vw), 44px);
   color: var(--color-primary);
-  font-size: 20px;
+  font-size: clamp(18px, calc(20 / 1920 * 100vw), 20px);
   font-weight: 700;
   text-align: center;
 }
@@ -933,21 +981,25 @@ section,
   background: var(--color-light-blue) url("./img/support-background.png") center / cover no-repeat;
 }
 
+.support__line-break--heading {
+  display: none;
+}
+
 .support__introduction {
-  margin-top: 32px;
+  margin-top: var(--space-32);
   text-align: center;
 }
 
 .support__subheading {
-  margin-top: 56px;
+  margin-top: var(--space-56);
   color: var(--color-primary);
-  font-size: 28px;
+  font-size: clamp(22px, calc(28 / 1920 * 100vw), 28px);
   text-align: center;
 }
 
 .support__flow--1 {
   width: min(100%, 1060px);
-  margin: 36px auto 0;
+  margin: var(--space-36) auto 0;
 }
 
 .support__step-card--analysis,
@@ -956,10 +1008,10 @@ section,
 .support__step-card--registration {
   position: relative;
   display: grid;
-  grid-template-columns: 180px 1fr;
+  grid-template-columns: clamp(140px, calc(180 / 1920 * 100vw), 180px) 1fr;
   align-items: center;
-  gap: 40px;
-  padding: 36px;
+  gap: var(--space-40);
+  padding: var(--space-36);
   border: 1px solid #d8e2f0;
   border-radius: var(--radius-card);
   background: var(--color-white);
@@ -970,39 +1022,39 @@ section,
   position: absolute;
   top: -34px;
   z-index: 2;
-  width: clamp(90px, 9vw, 150px);
+  width: clamp(90px, calc(150 / 1920 * 100vw), 150px);
   pointer-events: none;
 }
 
 .support__step-decoration--analysis {
-  right: 40px;
-  width: 250px;
+  right: var(--space-40);
+  width: clamp(150px, calc(250 / 1920 * 100vw), 250px);
 }
 
 .support__step-decoration--implementation {
-  right: 40px;
-  width: 150px;
+  right: var(--space-40);
+  width: clamp(90px, calc(150 / 1920 * 100vw), 150px);
 }
 
 .support__step-decoration--planning,
 .support__step-decoration--registration {
-  left: 60px;
+  left: clamp(32px, calc(60 / 1920 * 100vw), 60px);
 }
 
 .support__step-decoration--planning {
-  width: 180px;
-  top: -70px;
+  width: clamp(108px, calc(180 / 1920 * 100vw), 180px);
+  top: clamp(-70px, calc(-70 / 1920 * 100vw), -42px);
 }
 
 .support__step-decoration--registration {
-  width: 120px;
-  top: -100px;
+  width: clamp(72px, calc(120 / 1920 * 100vw), 120px);
+  top: clamp(-100px, calc(-100 / 1920 * 100vw), -60px);
   ;
 }
 
 .support__step-card--planning,
 .support__step-card--registration {
-  grid-template-columns: 1fr 180px;
+  grid-template-columns: 1fr clamp(140px, calc(180 / 1920 * 100vw), 180px);
 }
 
 .support__step-visual--1,
@@ -1013,7 +1065,7 @@ section,
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 160px;
+  min-height: clamp(130px, calc(160 / 1920 * 100vw), 160px);
   border-radius: 50%;
   background: var(--color-light-blue);
   color: var(--color-primary);
@@ -1023,7 +1075,7 @@ section,
 .support__accent--3,
 .support__accent--5,
 .support__accent--7 {
-  font-size: 48px;
+  font-size: clamp(36px, calc(48 / 1920 * 100vw), 48px);
   font-weight: 900;
 }
 
@@ -1039,14 +1091,14 @@ section,
 .support__heading-quaternary--3,
 .support__heading-quaternary--4 {
   color: var(--color-primary);
-  font-size: 23px;
+  font-size: clamp(19px, calc(23 / 1920 * 100vw), 23px);
 }
 
 .support__step-text--analysis,
 .support__step-text--planning,
 .support__step-text--implementation,
 .support__step-text--registration {
-  margin-top: 16px;
+  margin-top: var(--space-16);
   line-height: 1.8;
 }
 
@@ -1060,8 +1112,8 @@ section,
 .support__step-arrow--1,
 .support__step-arrow--2,
 .support__step-arrow--3 {
-  width: 50px;
-  margin: 16px auto;
+  width: clamp(36px, calc(50 / 1920 * 100vw), 50px);
+  margin: var(--space-16) auto;
 }
 
 /* Plans / Proposal / Benefits */
@@ -1078,7 +1130,7 @@ section,
 .support-plans__card-number--3,
 .support-plans__card-number--4 {
   color: var(--color-blue);
-  font-size: 30px;
+  font-size: clamp(24px, calc(30 / 1920 * 100vw), 30px);
   font-weight: 900;
 }
 
@@ -1089,9 +1141,9 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 108px;
+  min-height: clamp(88px, calc(108 / 1920 * 100vw), 108px);
   color: var(--color-primary);
-  font-size: 24px;
+  font-size: clamp(19px, calc(24 / 1920 * 100vw), 24px);
   line-height: 1.5;
   text-align: center;
 }
@@ -1100,25 +1152,25 @@ section,
 .support-plans__price--2,
 .support-plans__price--3,
 .support-plans__price--4 {
-  margin-top: 22px;
-  padding: 16px;
+  margin-top: clamp(16px, calc(22 / 1920 * 100vw), 22px);
+  padding: var(--space-16);
   border-radius: 8px;
   background: var(--color-light-blue);
   color: var(--color-primary);
   font-weight: 900;
-  font-size: 24px;
+  font-size: clamp(19px, calc(24 / 1920 * 100vw), 24px);
   line-height: 1.8;
 }
 
 .support-plans__amount {
-  font-size: 32px;
+  font-size: clamp(26px, calc(32 / 1920 * 100vw), 32px);
 }
 
 .support-plans__card-text--sheet,
 .support-plans__card-text--analysis,
 .support-plans__card-text--improvement,
 .support-plans__card-text--consulting {
-  margin-top: 22px;
+  margin-top: clamp(16px, calc(22 / 1920 * 100vw), 22px);
   line-height: 1.7;
 }
 
@@ -1126,11 +1178,11 @@ section,
   position: absolute;
   top: -18px;
   right: 20px;
-  padding: 8px 14px;
+  padding: clamp(6px, calc(8 / 1920 * 100vw), 8px) clamp(10px, calc(14 / 1920 * 100vw), 14px);
   border-radius: 999px;
   background: var(--color-cta);
   color: var(--color-white);
-  font-size: 13px;
+  font-size: clamp(11px, calc(13 / 1920 * 100vw), 13px);
   font-weight: 900;
 }
 
@@ -1162,18 +1214,18 @@ section,
 }
 
 .proposal__description {
-  margin-top: 32px;
-  font-size: 17px;
+  margin-top: var(--space-32);
+  font-size: clamp(15px, calc(17 / 1920 * 100vw), 17px);
   line-height: 1.8;
   text-align: center;
 }
 
 .proposal__value-text {
-  margin-top: 14px;
+  margin-top: clamp(10px, calc(14 / 1920 * 100vw), 14px);
 }
 
 .proposal__conclusion {
-  margin-top: 24px;
+  margin-top: var(--space-24);
   color: var(--color-white);
   font-weight: 700;
   line-height: 1.7;
@@ -1183,7 +1235,7 @@ section,
 .proposal__button {
   display: flex;
   width: fit-content;
-  margin: 32px auto 0;
+  margin: var(--space-32) auto 0;
 }
 
 .benefits {
@@ -1196,9 +1248,9 @@ section,
 
 .benefits__card-decoration {
   position: absolute;
-  bottom: -50px;
+  bottom: clamp(-50px, calc(-50 / 1920 * 100vw), -30px);
   z-index: 2;
-  width: clamp(84px, 8vw, 140px);
+  width: clamp(84px, calc(140 / 1920 * 100vw), 140px);
   pointer-events: none;
 }
 
@@ -1217,7 +1269,7 @@ section,
 .benefits__card-heading--3,
 .benefits__card-heading--4 {
   color: var(--color-primary);
-  font-size: 20px;
+  font-size: clamp(18px, calc(20 / 1920 * 100vw), 20px);
   font-weight: 900;
 }
 
@@ -1225,7 +1277,7 @@ section,
 .benefits__card-text--guarantee,
 .benefits__card-text--integration,
 .benefits__card-text--flexibility {
-  margin-top: 20px;
+  margin-top: var(--space-20);
   line-height: 1.8;
 }
 
@@ -1237,9 +1289,9 @@ section,
 .recommended__item-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  gap: var(--space-24);
   width: min(100%, 900px);
-  margin: 44px auto 0;
+  margin: clamp(32px, calc(44 / 1920 * 100vw), 44px) auto 0;
 }
 
 .recommended__item--1,
@@ -1247,11 +1299,11 @@ section,
 .recommended__item--3,
 .recommended__item--4,
 .recommended__item--5 {
-  padding: 24px 32px;
+  padding: var(--space-24) var(--space-32);
   border-radius: 8px;
   background: var(--color-white);
   color: var(--color-primary);
-  font-size: 24px;
+  font-size: clamp(19px, calc(24 / 1920 * 100vw), 24px);
   font-weight: 700;
   box-shadow: var(--shadow-card);
 }
@@ -1273,9 +1325,9 @@ section,
 .consultation__benefit-list {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: clamp(22px, calc(30 / 1920 * 100vw), 30px);
   width: min(100%, 720px);
-  margin-top: 40px;
+  margin-top: var(--space-40);
   margin-inline: auto;
 }
 
@@ -1286,11 +1338,11 @@ section,
   position: relative;
   width: 75%;
   margin-inline: auto;
-  padding: 32px 16px;
+  padding: var(--space-32) var(--space-16);
   border-radius: 8px;
   background: var(--color-white);
   color: var(--color-primary);
-  font-size: 18px;
+  font-size: clamp(16px, calc(18 / 1920 * 100vw), 18px);
   font-weight: 900;
   text-align: center;
 }
@@ -1299,7 +1351,7 @@ section,
   position: absolute;
   top: 25%;
   z-index: 2;
-  width: clamp(72px, 8vw, 120px);
+  width: clamp(72px, calc(120 / 1920 * 100vw), 120px);
   transform: translateY(-50%);
   pointer-events: none;
 }
@@ -1318,7 +1370,7 @@ section,
 .footer-cta__button {
   display: flex;
   width: fit-content;
-  margin: 32px auto 0;
+  margin: var(--space-32) auto 0;
 }
 
 .footer-cta {
@@ -1328,7 +1380,7 @@ section,
 }
 
 .footer-cta__lead {
-  margin-top: 18px;
+  margin-top: var(--space-18);
   line-height: 1.8;
 }
 
@@ -1338,12 +1390,12 @@ section,
 }
 
 .contact__lead {
-  margin-top: 18px;
+  margin-top: var(--space-18);
   text-align: center;
 }
 
 .contact__form--1 {
-  margin-top: 44px;
+  margin-top: clamp(32px, calc(44 / 1920 * 100vw), 44px);
 }
 
 .contact__field--company,
@@ -1352,7 +1404,7 @@ section,
 .contact__field--phone,
 .contact__field--message,
 .contact__field--privacy {
-  margin-top: 22px;
+  margin-top: clamp(16px, calc(22 / 1920 * 100vw), 22px);
 }
 
 .contact__label--company,
@@ -1375,8 +1427,8 @@ section,
 .contact__input--phone,
 .contact__textarea--message {
   width: 100%;
-  margin-top: 8px;
-  padding: 14px 16px;
+  margin-top: clamp(6px, calc(8 / 1920 * 100vw), 8px);
+  padding: clamp(11px, calc(14 / 1920 * 100vw), 14px) var(--space-16);
   border: 1px solid #bfd2f5;
   border-radius: 6px;
   background: var(--color-white);
@@ -1384,7 +1436,7 @@ section,
 }
 
 .contact__textarea--message {
-  min-height: 180px;
+  min-height: clamp(140px, calc(180 / 1920 * 100vw), 180px);
   resize: vertical;
 }
 
@@ -1392,15 +1444,15 @@ section,
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
+  gap: clamp(6px, calc(8 / 1920 * 100vw), 8px);
   color: var(--color-primary);
   font-weight: 700;
   line-height: 1.6;
 }
 
 .contact__privacy-checkbox {
-  width: 18px;
-  height: 18px;
+  width: clamp(16px, calc(18 / 1920 * 100vw), 18px);
+  height: clamp(16px, calc(18 / 1920 * 100vw), 18px);
   accent-color: var(--color-primary);
 }
 
@@ -1408,17 +1460,17 @@ section,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 2px 8px;
+  padding: 2px clamp(6px, calc(8 / 1920 * 100vw), 8px);
   border-radius: 999px;
   background: #dc2626;
   color: var(--color-white);
-  font-size: 12px;
+  font-size: clamp(11px, calc(12 / 1920 * 100vw), 12px);
   font-weight: 900;
 }
 
 .contact__privacy-note {
-  margin-top: 10px;
-  font-size: 14px;
+  margin-top: clamp(8px, calc(10 / 1920 * 100vw), 10px);
+  font-size: clamp(12px, calc(14 / 1920 * 100vw), 14px);
   line-height: 1.8;
 }
 
@@ -1429,8 +1481,8 @@ section,
 
 .contact__button {
   display: flex;
-  min-width: 240px;
-  margin: 32px auto 0;
+  min-width: clamp(200px, calc(240 / 1920 * 100vw), 240px);
+  margin: var(--space-32) auto 0;
 }
 
 /* Footer */
@@ -1445,12 +1497,12 @@ section,
 
 .site-footer__company-name {
   color: var(--color-white);
-  font-size: 20px;
+  font-size: clamp(18px, calc(20 / 1920 * 100vw), 20px);
   font-weight: 900;
 }
 
 .site-footer__tagline {
-  margin-top: 18px;
+  margin-top: var(--space-18);
   line-height: 1.7;
 }
 
@@ -1458,9 +1510,9 @@ section,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  margin-top: 24px;
-  padding: 12px 28px;
+  min-height: clamp(42px, calc(48 / 1920 * 100vw), 48px);
+  margin-top: var(--space-24);
+  padding: var(--space-12) var(--space-28);
   border: 0;
   border-radius: 6px;
   background: #173976;
@@ -1472,7 +1524,7 @@ section,
 .site-footer__privacy-link {
   display: block;
   width: fit-content;
-  margin-top: 18px;
+  margin-top: var(--space-18);
   margin-inline: auto;
   color: #dbe7ff;
   font-weight: 700;
@@ -1506,107 +1558,78 @@ section,
 }
 
 /* Responsive */
+@media (max-width: 1440px) {
+  :root {
+    --hero-lead-width: 409px;
+    --supply-chain-risk-width: 1180px;
+  }
+}
+
 @media (max-width: 1024px) {
   :root {
-    --section-padding: 80px;
+    --hero-lead-width: 409px;
+    --supply-chain-risk-width: 1120px;
+    --supply-chain-risk-side-padding: 112px;
+    --scs-overview-side-padding: 112px;
+    --preparation-side-padding: 112px;
   }
 
-  .hero__lead {
-    line-height: 1.8;
+  .supply-chain-risk__introduction {
+    font-size: 10px;
   }
 
-  .hero__lead-wrap {
-    max-width: 45%;
+  .supply-chain-risk__impact-item--1,
+  .supply-chain-risk__impact-item--2,
+  .supply-chain-risk__impact-item--3,
+  .supply-chain-risk__impact-item--4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 72px;
+    line-height: 1.5;
   }
 
-  .hero__badge-list {
-    margin-top: 0;
+  .preparation__issues-decoration--left {
+    left: -80px;
   }
 
-  .hero__badge-list img {
-    width: 100px;
+  .preparation__issues-decoration--right {
+    right: -100px;
   }
 
-  .supply-chain-risk__impact-list {
-    grid-template-columns: repeat(2, 1fr);
+  .support__step-decoration--analysis {
+    width: clamp(175px, calc(250 / 1920 * 100vw), 250px);
   }
 
-  .supply-chain-risk,
-  .scs-overview,
-  .security-action,
-  .preparation {
-    display: block;
-    min-height: auto;
-    padding-top: max(var(--section-padding), var(--header-height));
-    padding-bottom: var(--section-padding);
+  .support__step-decoration--implementation {
+    width: clamp(125px, calc(150 / 1920 * 100vw), 150px);
   }
 
-  .supply-chain-risk__content {
-    grid-template-columns: 1fr;
-    gap: 32px;
+  .support__step-decoration--planning {
+    width: clamp(128px, calc(180 / 1920 * 100vw), 180px);
+    top: clamp(-70px, calc(-70 / 1920 * 100vw), -50px);
   }
 
-  .security-action__diagram {
-    margin-top: 48px;
-  }
-
-  .security-action__image {
-    width: 100%;
-    max-height: none;
-  }
-
-  .concerns__card-list,
-  .support-plans__card-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .support-plans__card-list {
-    gap: 24px;
-  }
-
-  .support__step-card--analysis,
-  .support__step-card--planning,
-  .support__step-card--implementation,
-  .support__step-card--registration {
-    grid-template-columns: 140px 1fr;
-  }
-
-  .support__step-card--planning,
-  .support__step-card--registration {
-    grid-template-columns: 1fr 140px;
-  }
-
-  .site-footer__navigation {
-    grid-template-columns: repeat(2, 1fr);
+  .support__step-decoration--registration {
+    width: clamp(80px, calc(120 / 1920 * 100vw), 120px);
   }
 
   .benefits__card-decoration {
-    bottom: -40px;
-    width: 125px;
+    position: absolute;
+    bottom: clamp(-50px, calc(-50 / 1920 * 100vw), -30px);
+    z-index: 2;
+    width: clamp(96px, calc(140 / 1920 * 100vw), 140px);
+    pointer-events: none;
   }
 
   .benefits__card-decoration--expertise {
-    left: -50px;
+    left: -16px;
     transform: rotate(-12deg);
   }
 
   .benefits__card-decoration--flexibility {
-    right: -32px;
+    right: -16px;
     transform: rotate(12deg);
-  }
-
-  .consultation__benefit-decoration {
-    width: 96px;
-  }
-
-  .consultation__benefit-decoration--1,
-  .consultation__benefit-decoration--3 {
-    right: 0px;
-  }
-
-  .consultation__benefit-decoration--2,
-  .consultation__benefit-decoration--4 {
-    left: -5px;
   }
 }
 
@@ -1614,6 +1637,11 @@ section,
   :root {
     --side-padding: 16px;
     --section-padding: 64px;
+    --supply-chain-risk-side-padding: 50px;
+    --scs-overview-side-padding: 50px;
+    --security-action-side-padding: 50px;
+    --preparation-side-padding: 50px;
+    --hero-lead-width: 300px;
   }
 
   .site-header__brand-name {
@@ -1626,22 +1654,49 @@ section,
   }
 
   .hero {
+    position: relative;
     align-items: flex-start;
     min-height: 100svh;
     padding-top: 112px;
   }
 
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100svh - 112px);
+  }
+
   .hero__title {
-    font-size: clamp(36px, 11vw, 48px);
+    font-size: 32px;
+    line-height: 1.4;
   }
 
   .hero__badge-list {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
     justify-content: center;
+    gap: 12px;
+    width: fit-content;
+  }
+
+  .hero__badge-image--support,
+  .hero__badge-image--diagnosis,
+  .hero__badge-image--readiness {
+    width: clamp(80px, calc(150 / 1920 * 100vw), 150px);
+    height: clamp(80px, calc(150 / 1920 * 100vw), 150px);
+    object-fit: contain;
+  }
+
+  .hero__badge-image--readiness {
+    grid-column: 1 / span 2;
+    justify-self: center;
   }
 
   .hero__consultation-button {
     width: 100%;
     min-width: 0;
+    margin-top: auto;
+    padding-block: 24px;
   }
 
   .story-sequence {
@@ -1667,10 +1722,53 @@ section,
     will-change: auto;
   }
 
+  .supply-chain-risk,
+  .scs-overview,
+  .security-action,
+  .preparation {
+    min-height: auto;
+    display: flex;
+    align-items: stretch;
+    padding-block: 64px;
+  }
+
+  .supply-chain-risk::before,
+  .scs-overview::before,
+  .security-action::before,
+  .preparation::before {
+    top: 0;
+    bottom: 0;
+    height: auto;
+    width: calc(100% - 32px);
+    border-radius: 30vw;
+  }
+
+  .supply-chain-risk__content {
+    gap: 32px;
+  }
+
+  .security-action__diagram {
+    margin-top: 48px;
+  }
+
+  .security-action__image {
+    width: 80%;
+    max-height: none;
+  }
+
   .story-cover__content {
     width: min(100%, 560px);
     padding: 56px 24px;
-    border-radius: var(--radius-card);
+    border-radius: 50%;
+  }
+
+  .story-cover__bottom-image {
+    position: absolute;
+    bottom: -10px;
+    left: 35%;
+    width: min(42%, 150px);
+    transform: translate(-50%, 50%);
+    pointer-events: none;
   }
 
   .supply-chain-risk__impact-list,
@@ -1684,6 +1782,10 @@ section,
   .support-plans__card-list,
   .site-footer__navigation {
     grid-template-columns: 1fr;
+  }
+
+  .support-plans__card-list {
+    gap: var(--space-32);
   }
 
   .concerns__card-decoration {
@@ -1728,7 +1830,8 @@ section,
   }
 
   .benefits__card-decoration--expertise {
-    left: 10px;
+    left: auto;
+    right: 10px;
   }
 
   .benefits__card-decoration--flexibility {
@@ -1740,7 +1843,8 @@ section,
   .support__step-card--implementation,
   .support__step-card--registration {
     grid-template-columns: 1fr;
-    padding: 24px;
+    padding-block: 32px;
+    padding-inline: 48px;
   }
 
   .support__step-visual--1,
@@ -1759,12 +1863,27 @@ section,
 
   .support__step-decoration {
     top: -24px;
-    width: 90px;
+  }
+
+  .support__step-decoration--analysis {
+    width: 220px;
+  }
+
+  .support__step-decoration--implementation {
+    width: 180px;
   }
 
   .support__step-decoration--analysis,
   .support__step-decoration--implementation {
     right: 12px;
+  }
+
+  .support__step-decoration--planning {
+    width: 200px;
+  }
+
+  .support__step-decoration--registration {
+    width: 140px;
   }
 
   .support__step-decoration--planning,
@@ -1782,6 +1901,361 @@ section,
   br {
     display: none;
   }
+
+  br[class*="line-break"] {
+    display: inline;
+  }
+
+  br.security-action__line-break--sp {
+    display: none;
+  }
+
+  br.contact__line-break--sp {
+    display: none;
+  }
+
+  .supply-chain-risk__impact-heading {
+    font-size: clamp(16px, calc(20 / 1920 * 100vw), 20px);
+  }
+
+  .supply-chain-risk__impact-item--1,
+  .supply-chain-risk__impact-item--2,
+  .supply-chain-risk__impact-item--3,
+  .supply-chain-risk__impact-item--4 {
+    font-size: clamp(14px, calc(18 / 1920 * 100vw), 18px);
+  }
+
+  .supply-chain-risk__impact-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 425px) {
+  :root {
+    --side-padding: 14px;
+    --section-padding: 56px;
+    --supply-chain-risk-side-padding: 24px;
+    --scs-overview-side-padding: 24px;
+    --security-action-side-padding: 24px;
+    --preparation-side-padding: 24px;
+    --hero-lead-width: 100%;
+  }
+
+  .site-header {
+    height: 60px;
+  }
+
+  .site-header__consultation-label {
+    font-size: 12px;
+  }
+
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    padding-top: calc(var(--header-height));
+    padding-bottom: 0;
+    overflow: hidden;
+    background: var(--color-light-blue);
+  }
+
+  .hero__background-image {
+    content: url("./img/hero-background-sp.png");
+    display: block;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    object-fit: contain;
+    object-position: center bottom;
+    transform: none;
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100svh - var(--header-height) - 24px);
+  }
+
+  .hero__title-wrap,
+  .hero__lead-wrap,
+  .hero__badge-list {
+    flex: 0 0 auto;
+  }
+
+  .hero__title {
+    font-size: 24px;
+    line-height: 1.35;
+  }
+
+  .hero__lead {
+    font-size: 10px;
+    line-height: 1.8;
+  }
+
+  .hero__lead-wrap {
+    max-width: 100%;
+  }
+
+  .hero__badge-list {
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .hero__badge-image--support,
+  .hero__badge-image--diagnosis,
+  .hero__badge-image--readiness {
+    width: 80px;
+    height: 80px;
+  }
+
+  .hero__consultation-button {
+    width: 100%;
+    min-width: 0;
+    margin-top: auto;
+    margin-inline: 0;
+    margin-bottom: 16px;
+    border-radius: 6px;
+  }
+
+  .story-cover__heading,
+  .supply-chain-risk__heading,
+  .scs-overview__heading,
+  .security-action__heading,
+  .preparation__heading,
+  .concerns__heading,
+  .support__heading,
+  .support-plans__heading,
+  .proposal__heading,
+  .benefits__heading,
+  .recommended__heading,
+  .consultation__heading,
+  .footer-cta__heading,
+  .contact__heading,
+  .preparation__subheading,
+  .support__subheading,
+  .supply-chain-risk__impact-heading,
+  .preparation__issues-heading,
+  .concerns__card-heading--first,
+  .concerns__card-heading--second,
+  .concerns__card-heading--third,
+  .support__heading-quaternary--1,
+  .support__heading-quaternary--2,
+  .support__heading-quaternary--3,
+  .support__heading-quaternary--4,
+  .support-plans__card-heading--sheet,
+  .support-plans__card-heading--analysis,
+  .support-plans__card-heading--improvement,
+  .support-plans__card-heading--consulting,
+  .benefits__card-heading--1,
+  .benefits__card-heading--2,
+  .benefits__card-heading--3,
+  .benefits__card-heading--4 {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  .story-cover__lead,
+  .supply-chain-risk__introduction,
+  .supply-chain-risk__conclusion,
+  .scs-overview__description-text,
+  .scs-overview__purpose-text,
+  .scs-overview__scope-text,
+  .security-action__lead,
+  .preparation__question-card--security-status,
+  .preparation__question-card--scs-status,
+  .preparation__issue-item--1,
+  .preparation__issue-item--2,
+  .preparation__issue-item--3,
+  .preparation__issues-note,
+  .preparation__conclusion,
+  .concerns__card-text--first,
+  .concerns__card-text--second,
+  .concerns__card-text--third,
+  .concerns__conclusion,
+  .support__intro-text,
+  .support__step-text--analysis,
+  .support__step-text--planning,
+  .support__step-text--implementation,
+  .support__step-text--registration,
+  .support-plans__card-text--sheet,
+  .support-plans__card-text--analysis,
+  .support-plans__card-text--improvement,
+  .support-plans__card-text--consulting,
+  .proposal__description,
+  .proposal__conclusion,
+  .benefits__card-text--expertise,
+  .benefits__card-text--guarantee,
+  .benefits__card-text--integration,
+  .benefits__card-text--flexibility,
+  .footer-cta__lead,
+  .contact__lead,
+  .contact__privacy-note {
+    font-size: 15px;
+  }
+
+  .story-cover__bottom-image {
+    display: none;
+  }
+
+  .supply-chain-risk__content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .supply-chain-risk,
+  .scs-overview,
+  .security-action,
+  .preparation {
+    padding-block: var(--section-padding);
+  }
+
+  .supply-chain-risk::before,
+  .scs-overview::before,
+  .security-action::before,
+  .preparation::before {
+    width: calc(100% - 20px);
+    border-radius: 20px;
+  }
+
+  .concerns__card--first,
+  .concerns__card--second,
+  .concerns__card--third,
+  .benefits__card--expertise,
+  .benefits__card--guarantee,
+  .benefits__card--integration,
+  .benefits__card--flexibility,
+  .support-plans__card--sheet,
+  .support-plans__card--analysis,
+  .support-plans__card--improvement,
+  .support-plans__card--consulting {
+    padding: 24px 18px;
+  }
+
+  .benefits__card--expertise,
+  .benefits__card--guarantee,
+  .benefits__card--integration,
+  .benefits__card--flexibility {
+    min-height: 266px;
+  }
+
+  .support__step-card--analysis,
+  .support__step-card--planning,
+  .support__step-card--implementation,
+  .support__step-card--registration {
+    padding: 24px 18px;
+  }
+
+  .support-plans__price--1,
+  .support-plans__price--2,
+  .support-plans__price--3,
+  .support-plans__price--4 {
+    padding: 14px 10px;
+    font-size: 18px;
+  }
+
+  .support-plans__amount {
+    font-size: 24px;
+  }
+
+  .recommended__item--1,
+  .recommended__item--2,
+  .recommended__item--3,
+  .recommended__item--4,
+  .recommended__item--5 {
+    padding: 20px 18px;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .contact__form--1 {
+    width: 100%;
+  }
+
+  .contact__input--company,
+  .contact__input--name,
+  .contact__input--email,
+  .contact__input--phone,
+  .contact__textarea--message {
+    min-width: 0;
+  }
+
+  .concerns__card-decoration--second {
+    top: -45px;
+    width: 180px;
+  }
+
+  .support__step-decoration--analysis {
+    right: -12px;
+    width: 150px;
+  }
+
+  .support__step-decoration--implementation {
+    right: 0;
+    width: 120px;
+  }
+
+  .support__step-decoration--planning {
+    width: 150px;
+    top: -42px;
+    left: 0;
+
+  }
+
+
+  .support__step-decoration--registration {
+    width: 90px;
+    top: -48px;
+    left: 16px;
+
+  }
+
+  br.benefits__line-break--3 {
+    display: none;
+  }
+
+  br.security-action__line-break--sp {
+    display: inline;
+  }
+
+  br.contact__line-break--sp {
+    display: inline;
+  }
+
+  .benefits__card-text--flexibility {
+    margin-top: var(--space-20);
+  }
+
+  .benefits__card-text--expertise,
+  .benefits__card-text--guarantee,
+  .benefits__card-text--integration {
+    margin-top: var(--space-40);
+  }
+
+  .consultation__benefit-decoration {
+    width: 72px;
+  }
+
+  .consultation__benefit-decoration--1,
+  .consultation__benefit-decoration--3 {
+    right: -16px;
+  }
+
+  .consultation__benefit-decoration--2,
+  .consultation__benefit-decoration--4 {
+    left: -16px;
+  }
+
+  .preparation__issues-decoration--right {
+    width: 106px;
+    top: 52%;
+  }
+
 }
 
 @media (prefers-reduced-motion: reduce) {
