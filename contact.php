@@ -5,7 +5,7 @@ declare(strict_types=1);
 mb_language('Japanese');
 mb_internal_encoding('UTF-8');
 
-const CONTACT_SUCCESS_MESSAGE = 'お問い合わせありがとうございました。担当者よりご連絡いたします。';
+const CONTACT_SUCCESS_MESSAGE = "お問い合わせありがとうございました。\n担当者より1営業日以内にメールまたは電話にてご連絡いたします。";
 const CONTACT_ERROR_MESSAGE = '送信に失敗しました。時間をおいて再度お試しください。';
 
 $config = load_mail_config(__DIR__ . '/config/mail.php', __DIR__ . '/config/mail.local.php');

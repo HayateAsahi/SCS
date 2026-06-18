@@ -253,6 +253,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ].filter(Boolean);
     const privacyInput = contactForm.querySelector('[name="privacy_consent"]');
     const initialSubmitLabel = submitLabel?.textContent.trim() || "今すぐ無料相談する";
+    const successMessage =
+      "お問い合わせありがとうございました。\n担当者より1営業日以内にメールまたは電話にてご連絡いたします。";
+    const errorMessage = "送信に失敗しました。時間をおいて再度お試しください。";
     let isSubmitting = false;
 
     const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -264,6 +267,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       feedback.textContent = message;
       feedback.className = "contact__feedback";
+
+      feedback.setAttribute("role", type === "error" ? "alert" : "status");
 
       if (type) {
         feedback.classList.add(`contact__feedback--${type}`);
@@ -368,34 +373,43 @@ document.addEventListener("DOMContentLoaded", () => {
               const message =
                 firstFieldError ||
                 result?.error?.message ||
-                "送信に失敗しました。時間をおいて再度お試しください。";
+                errorMessage;
 
               throw new Error(message);
             }
 
             setFeedback(
-              result?.data?.message ||
-                "お問い合わせありがとうございました。担当者よりご連絡いたします。",
+              result?.data?.message || successMessage,
               "success"
             );
             contactForm.reset();
+
+            if (submitLabel) {
+              submitLabel.textContent = "送信完了";
+            }
           })
         )
         .catch((error) => {
           setFeedback(
-            error?.message ||
-              "送信に失敗しました。時間をおいて再度お試しください。",
+            error?.message || errorMessage,
             "error"
           );
         })
         .finally(() => {
           isSubmitting = false;
 
-          if (submitLabel) {
+          if (submitLabel && !feedback?.classList.contains("contact__feedback--success")) {
             submitLabel.textContent = initialSubmitLabel;
           }
 
           validateContactForm();
+
+          if (submitLabel && feedback?.classList.contains("contact__feedback--success")) {
+            window.setTimeout(() => {
+              submitLabel.textContent = initialSubmitLabel;
+              validateContactForm();
+            }, 1800);
+          }
         });
     });
   }
