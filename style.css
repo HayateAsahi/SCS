@@ -120,7 +120,6 @@ section,
 .scs-overview__content,
 .security-action__lead,
 .preparation__issues-box,
-.support__introduction,
 .proposal__description,
 .proposal__conclusion,
 .contact__form--1 {
@@ -456,7 +455,7 @@ section,
 .story-cover {
   display: flex;
   min-height: 100svh;
-  background: url("./img/story-cover-background.png") no-repeat center center;
+  background: url("./img/story-cover-background.png") center / cover no-repeat;
   color: var(--color-white);
 }
 
@@ -953,16 +952,16 @@ section,
 }
 
 .concerns__card-decoration--first {
-  top: -60px;
+  top: -40px;
 }
 
 .concerns__card-decoration--second {
-  top: -50px;
-  width: clamp(132px, calc(220 / 1920 * 100vw), 220px);
+  top: -30px;
+  width: clamp(160px, calc(220 / 1920 * 100vw), 220px);
 }
 
 .concerns__card-decoration--third {
-  top: -70px;
+  top: -40px;
 
 }
 
@@ -996,6 +995,41 @@ section,
   font-size: clamp(18px, calc(20 / 1920 * 100vw), 20px);
   font-weight: 700;
   text-align: center;
+}
+
+.concerns__certification {
+  margin-top: var(--space-32);
+  padding: var(--space-32);
+  background: var(--color-light-blue);
+  border-radius: var(--radius-card);
+  text-align: center;
+}
+
+.concerns__certification-note {
+  color: var(--color-primary);
+  font-size: clamp(18px, calc(22 / 1920 * 100vw), 22px);
+  font-weight: 900;
+  line-height: 1.7;
+  font-size: var(--font-title-sm);
+  display: inline;
+  background: linear-gradient(transparent 60%,
+      #fff3a3 60%);
+  background-repeat: no-repeat;
+  background-size: 0 100%;
+}
+
+.concerns__certification-note.is-visible {
+  animation: concerns-marker-fill 1.1s ease-out 0.3s forwards;
+}
+
+@keyframes concerns-marker-fill {
+  from {
+    background-size: 0 100%;
+  }
+
+  to {
+    background-size: 100% 100%;
+  }
 }
 
 /* Support */
@@ -1995,22 +2029,28 @@ section,
     --supply-chain-risk-width: var(--content-width);
   }
 
-  .concerns__card-list,
+  .concerns__card-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-28);
+  }
+
   .support-plans__card-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-28);
   }
 
-  .concerns__card-list> :last-child:nth-child(odd),
+  .concerns__card-list> :last-child:nth-child(odd) {
+    grid-column: auto;
+    justify-self: stretch;
+    width: auto;
+  }
+
   .support-plans__card-list> :last-child:nth-child(odd) {
     grid-column: 1 / span 2;
     justify-self: center;
     width: calc(50% - (var(--space-28) / 2));
-  }
-
-  .support-plans__card-list {
-    gap: var(--space-28);
   }
 
   .site-footer__navigation {
@@ -2044,6 +2084,29 @@ section,
 
   .support__step-decoration--registration {
     width: clamp(80px, calc(120 / 1920 * 100vw), 120px);
+  }
+
+  .support__step-card--analysis,
+  .support__step-card--planning,
+  .support__step-card--implementation,
+  .support__step-card--registration {
+    grid-template-columns: 1fr;
+    padding-block: 32px;
+    padding-inline: clamp(24px, 5vw, 48px);
+  }
+
+  .support__step-visual--1,
+  .support__step-visual--2,
+  .support__step-visual--3,
+  .support__step-visual--4 {
+    width: 150px;
+    min-height: 150px;
+    margin-inline: auto;
+  }
+
+  .support__step-card--planning .support__step-visual--2,
+  .support__step-card--registration .support__step-visual--4 {
+    order: -1;
   }
 
   .benefits__card-decoration {
@@ -2220,7 +2283,6 @@ section,
   .benefits__card-list,
   .recommended__item-list,
   .consultation__benefit-list,
-  .support-plans__card-list,
   .site-footer__navigation {
     grid-template-columns: 1fr;
   }
@@ -2232,6 +2294,10 @@ section,
   .concerns__card-decoration {
     top: -32px;
     width: 96px;
+  }
+
+  .concerns__card-decoration--second {
+    width: 140px;
   }
 
   .scs-overview__stakeholder-decoration {
@@ -2329,6 +2395,11 @@ section,
   .support-plans__card-heading--improvement,
   .support-plans__card-heading--consulting {
     min-height: 0;
+  }
+
+  .support-plans__card-heading--analysis,
+  .support-plans__card-heading--consulting {
+    min-height: 3em;
   }
 
   br {
@@ -2527,6 +2598,7 @@ section,
   .concerns__card-text--second,
   .concerns__card-text--third,
   .concerns__conclusion,
+  .concerns__certification-note,
   .support__intro-text,
   .support__step-text--analysis,
   .support__step-text--planning,
@@ -2698,8 +2770,14 @@ section,
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .story-cover__scroll-arrow {
+
+  .story-cover__scroll-arrow,
+  .concerns__certification-note {
     animation: none;
+  }
+
+  .concerns__certification-note {
+    background-size: 100% 100%;
   }
 
   .hero__title,

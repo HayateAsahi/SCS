@@ -155,6 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ".preparation__conclusion",
     ".concerns__heading",
     ".concerns__conclusion",
+    ".concerns__certification-note",
     ".support__heading",
     ".support__introduction",
     ".support__subheading",
