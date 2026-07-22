@@ -1173,8 +1173,12 @@ section,
 }
 
 /* Plans / Proposal / Benefits */
-.support-plans__inner {
-  padding-top: var(--section-padding);
+.support-plans {
+  background: var(--color-primary) url("./img/background-primary.png") center / cover no-repeat;
+}
+
+.support-plans__heading {
+  color: var(--color-white);
 }
 
 .support-plans__card-list {
@@ -1348,6 +1352,12 @@ section,
   gap: var(--space-24);
   width: min(100%, 900px);
   margin: clamp(32px, calc(44 / 1920 * 100vw), 44px) auto 0;
+}
+
+.recommended__item-list > :last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc((100% - var(--space-24)) / 2);
 }
 
 .recommended__item--1,
@@ -2289,6 +2299,10 @@ section,
 
   .support-plans__card-list {
     gap: var(--space-32);
+  }
+
+  .recommended__item-list > :last-child:nth-child(odd) {
+    width: 100%;
   }
 
   .concerns__card-decoration {
